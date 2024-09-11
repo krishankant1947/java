@@ -44,18 +44,27 @@
                             <div class="form-floating">
                                 <input type="password" class="form-control" required id="floatingPassword" value1="Admin@123" placeholder="Password">
                                 <label for="floatingPassword">Password</label>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                  </div>
+                                  <div class="invalid-feedback">
+                                    Please choose a username.
+                                  </div>
                         </div>
         
                             </div>
                                
                     </div>
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <input type="checkbox" value="Remember me">Remember me
+                    <div  class="row">
+                        <div class="col-12">
+                            <div  class="form-check">            
+                                <input type="checkbox" class="form-check-input " id="checkboxs" >
+                                <label class="form-check-label text-capitalize" for="checkboxs"> remember me</label>
+                            </div>
+             
                         </div>
-                        <div class="col-6"></div>
                     </div>
-                    <div class="row my-2">
+                    <div class="row my-2 text-center">
                         <div class="col-12">
                             <button class="w-50 btn btn-lg shadow-lg  btn-primary" type="submit" className = 'was-validated'">Login </button>
             
