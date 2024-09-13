@@ -88,37 +88,25 @@
         </form>
     </section>
     <script type="text/javascript">
-        
-        (function($){
-            // alert($);
-        })(jQuery)
-
-
-        function bane(){
-            // asf asf
-        }
-
-        bane()
-
+        name="hello";
+       if( confirm("are you sure"));
+        prompt("your problams","n/a");
         $(document).ready(function(){
-            
-
             $('#hello').submit(function(e){
-                $(this).addClass('was-validated')
-                console.log($(this));
                 let email = $('#email_id').val().trim();
                 let password = $('#checkpassword').val().trim();
                 
                 if(email.length == 0){
-                    alert("Missing email");
+                    alert("checkemail");
                 }
 
                 if(password.length == 0){
-                    alert("Missig password")
+                    alert("recheckpassword")
                 }
-                if(email.length == 0 || password.length==0){
-                    e.preventDefault();
-                }
+                let confirmpassword=$('#confirmpassword').val().trim();
+                if(confirmpassword.length==0){
+                    alert("check password")
+                }                
             })
         })
 
