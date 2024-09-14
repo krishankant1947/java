@@ -98,8 +98,8 @@
             $('#loginform').submit(function(e){
                 $(this).addClass('was-validated')
                 console.log($(this));
-                let email = $('#floatingEmail').val().trim();
-                let password = $('#floatingPassword').val().trim();
+                let email = $('#floatingEmail').val().trim().toUpperCase();
+                let password = $('#floatingPassword').val().trim() .toLowerCase();
                 
                 if(email.length == 0){
                    alert("Missing email");

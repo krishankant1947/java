@@ -8,12 +8,36 @@
      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
      <style>
         .container-fluid{
-            background-image:url(java/log.png);
+            background-image:url(log.png);
         }
      </style>
+     <script type="text/javascript">
+        function limitFirstName(event, object){
+            tackEventOrder(event)
+            // console.log(event.srcElement, object)
+            event.srcElement.value = event.srcElement.value.toUpperCase()
+        }
+        function trackMouse(event){
+            event.preventDefault();
+            console.log(event.type)
+        }
+        function tackEventOrder(event){
+            console.log(event.type)
+        }
+     </script>
 </head>
 <body>
-<form method="post" action="dbx.html">
+<form method="post" action="dbx.html" 
+onmousedown="trackMouse(event)"
+onmouseenter="trackMouse(event)"
+onmouseleave="trackMouse(event)"
+onmouseout="trackMouse(event)"
+onmousemove="trackMouse(event)"
+onmouseover="trackMouse(event)"
+onmouseup="trackMouse(event)"
+onmousewheel="trackMouse(event)"
+
+>
     <div class="container-fluid ">
         <div class="row">
             <div class="col-6 offset-3">
@@ -24,7 +48,13 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="first_name">First Name:</label>
-                                <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name" required/>
+                                <input onkeypress="limitFirstName(event, this)" onkeydown="tackEventOrder(event)" 
+                                onkeyup="tackEventOrder(event)"
+                                onblur="tackEventOrder(event)"
+                                onfocus="tackEventOrder(event)"
+                                onchange="tackEventOrder(event)"
+                                onclick="tackEventOrder(event)"
+                                type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name" required/>
                             </div>
                             <div class="col-6">
                                 <label for="Last_name">Last Name:</label>
