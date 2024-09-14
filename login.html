@@ -14,7 +14,7 @@
 </head>
 <body>
     <section>
-        <form method="post" id="loginform" action="dashboard.html" class=" needs-validation" novalidate >
+        <form method="post" id="loginform" action="dashboard.html" novalidate >
             <div class="row">
                 <div class="col-4 offset-4">
                     <div class="row my-2">
@@ -102,7 +102,7 @@
                 let password = $('#floatingPassword').val().trim();
                 
                 if(email.length == 0){
-                    alert("Missing email");
+                   alert("Missing email");
                 }
 
                 if(password.length == 0){
