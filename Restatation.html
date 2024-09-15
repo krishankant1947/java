@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,11 +18,21 @@
             event.srcElement.value = event.srcElement.value.toUpperCase()
         }
         function trackMouse(event){
-            event.preventDefault();
+            //event.preventDefault();
             console.log(event.type)
         }
         function tackEventOrder(event){
             console.log(event.type)
+        }
+        function limitaddressName(event){
+            tackproOrder(event)
+            // console.log(event.srcElement, object)
+            event.srcElement.value = event.srcElement.value.toUpperCase()
+        }
+        console.log("hello")
+        function limitaddressName(event){
+            tackEventOrder(event)
+            event.srcElement.value = event.srcElement.value.toUpperCase()
         }
      </script>
 </head>
@@ -74,7 +84,12 @@ onmousewheel="trackMouse(event)"
                         <div class="row my-2">
                             <div class="col-12">
                                 <label> Address:</label>
-                                <textarea class="form-control" id="inputAddress" name="address" placeholder="XYZ"></textarea>
+                                <textarea class="form-control"  onkeypress="limitaddressName(event, this)"
+                                onkeyup="tackeventOrder(event)"
+                                onblur="tackeventOrder(event)"
+                                onfocus="tackeventOrder(event)"
+                                onchange="tackeventOrder(event)"
+                                onclick="tackeventOrder(event)" id="inputAddress" name="address" placeholder="XYZ"></textarea>
                             </div>
                         </div>
                         <div class="row my-2">
