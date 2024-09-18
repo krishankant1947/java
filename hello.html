@@ -8,14 +8,21 @@
 <body>
     <script type="text/javascript">
         function mycolor(){
-            document.bgColor="red";
+            document.bgColor="lightgreen";
         }
-        function mywebsite(){
-            open =("https://www.youtube.com/watch?v=Kdz9J5vC4_o&t=995s");
+        function myvideo(){
+        open("https://www.youtube.com/watch?v=Kdz9J5vC4_o&t=995s", "myvipan", "left=100,top=100,width=320,height=320");
         }
-        
+        void function() {
+    console.log("Hello, world!");
+}();
     </script>
+    <form method="post">
+        <input type="text"name="asfa">
+        <input type="submit">        
+    </form>
     <button type="button" ondblclick="mycolor()"> change color</button>
-    <button type="button" onclick="mywebsite()">start video</button>
+    <button type="button" ondblclick="myvideo()">start video</button>
+    
 </body>
 </html>

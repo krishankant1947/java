@@ -34,20 +34,14 @@
             tackEventOrder(event)
             event.srcElement.value = event.srcElement.value.toUpperCase()
         }
+        function thisnumber(){
+            trackkey(event)
+            
+        }
      </script>
 </head>
 <body>
-<form method="post" action="dbx.html" 
-onmousedown="trackMouse(event)"
-onmouseenter="trackMouse(event)"
-onmouseleave="trackMouse(event)"
-onmouseout="trackMouse(event)"
-onmousemove="trackMouse(event)"
-onmouseover="trackMouse(event)"
-onmouseup="trackMouse(event)"
-onmousewheel="trackMouse(event)"
-
->
+<form method="post" action="dbx.html">
     <div class="container-fluid ">
         <div class="row">
             <div class="col-6 offset-3">
@@ -58,12 +52,12 @@ onmousewheel="trackMouse(event)"
                         <div class="row">
                             <div class="col-6">
                                 <label for="first_name">First Name:</label>
-                                <input onkeypress="limitFirstName(event, this)" onkeydown="tackEventOrder(event)" 
+                                <input onkeypress="limitFirstName(event, this)"
                                 onkeyup="tackEventOrder(event)"
                                 onblur="tackEventOrder(event)"
                                 onfocus="tackEventOrder(event)"
                                 onchange="tackEventOrder(event)"
-                                onclick="tackEventOrder(event)"
+                                ondblclick="tackEventOrder(event)"
                                 type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name" required/>
                             </div>
                             <div class="col-6">
@@ -85,11 +79,11 @@ onmousewheel="trackMouse(event)"
                             <div class="col-12">
                                 <label> Address:</label>
                                 <textarea class="form-control"  onkeypress="limitaddressName(event, this)"
-                                onkeyup="tackeventOrder(event)"
-                                onblur="tackeventOrder(event)"
+                                onmousedown="tackeventOrder(event)"
+                                onmousewheel="tackeventOrder(event)"
                                 onfocus="tackeventOrder(event)"
-                                onchange="tackeventOrder(event)"
-                                onclick="tackeventOrder(event)" id="inputAddress" name="address" placeholder="XYZ"></textarea>
+                                onkeydown="tackeventOrder(event)"
+                                onkeyup="tackeventOrder(event)" id="inputAddress" name="address" placeholder="XYZ"></textarea>
                             </div>
                         </div>
                         <div class="row my-2">
@@ -121,6 +115,13 @@ onmousewheel="trackMouse(event)"
                         <div class="row">
                             <div class="col-5">
                                 <button type="submit" class="btn btn-outline-success" class="form-control">Submit</button>
+                            </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-6">
+                                <label for="number"> phone number</label> 
+                                <input type="number" class="form-control" onclick="thisnumber(event)" id="number"  placeholder="mobile number">
+                               
                             </div>
                         </div>
                     </div>
