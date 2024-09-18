@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script type="text/javascript">
+        function mycolor(){
+        bgColor="red";
+        }
+        function limitFirstName(event){
+            tackEventOrder(event)
+            // console.log(event.srcElement, object)
+            event.srcElement.value = event.srcElement.value.toUpperCase()
+        }
+        function tackEventOrder(event){
+            console.log(event)
+        }
+        function upparcase(){
+            var a=document.getElementById("firstname");
+            a.value=a.value.toUpperCase()
+        }
+    </script>
+</head>
+<body >
+    <form action="#" >
+    
+        <div class="row my-2 p-3">
+            <div class="col-6 offset-3">
+                <div class="card">
+                <div class="text-center">
+                    <h2>School Registration Form</h2>
+                </div>
+                <div class="row my-2 p-3">
+                    <div class="col-6">
+                        <label for="firstname">First Name:</label>
+                        <input type="text" name="first_name"  onblur="upparcase()"
+                       
+                        
+                        
+                        
+                        
+                        class="form-control" id="firstname" placeholder="enter your first name">
+                    </div>
+                    <div class="col-6">
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" name="last_name" class="form-control" id="lastname" placeholder="enter your last name">
+                    </div>
+                </div>
+                <div class="row my-2 p-3">
+                    <div class="col-6">
+                        <label for="DOB">DOB</label>
+                        <input type="date" name="DOB" class="form-control" id="DOB" placeholder="Date of Birth">
+                    </div>
+                    <div class="col-6">
+                        <label for="email_id">Email</label>
+                        <input type="email" name="email" id="email_id" class="form-control" placeholder="enter your email">
+                    </div>
+                </div>
+                <div class="row my-2 p-3">
+                    <div class="col-12">
+                        <label for="Address"> Address</label>
+                        <textarea class="form-control" id="Address" placeholder="123,main,city"></textarea>
+                    </div>
+                </div>
+                <div class="row my-2 p-3">
+                    <div class="col-6">
+                        <label for="CATEGORY">Category:</label><br>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="radio">General<br>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="radio">OBC<br>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="radio">SC/ST<br>
+
+                    </div>
+                    <div class="col-6">
+                        <label for="CATEGORY">Gender:</label><br>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="radio">Male<br>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="radio">Female<br>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="radio">Other<br>
+                    </div>
+                </div>
+                <div class="row my-2 p-3">
+                    <div class="col-6">
+
+                    </div>
+                    <div class="col-6">
+
+                    </div>
+                </div>
+                <div class="row my-2 p-3">
+                    <div class="col-6">
+
+                    </div>
+                    <div class="col-6">
+
+                    </div>
+                </div>
+                <div class="row my-2 p-3">
+                    <div class="col-6">
+
+                    </div>
+                    <div class="col-6">
+
+                    </div>
+                </div>
+                </div>
+            </div><!--offset-->
+        </div><!--row-->
+    </form>
+</body>
+</html>
