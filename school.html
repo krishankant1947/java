@@ -10,22 +10,37 @@
         function mycolor(){
         bgColor="red";
         }
-        function limitFirstName(event){
-            tackEventOrder(event)
-            // console.log(event.srcElement, object)
+        function upparcase(event,object){
+            today(event)
+            event.srcElement.value = event.srcElement.value.toUpperCase()
+
+        }
+        function today(event){
+            console.log(event.srcElement)
+            console.log(event.srcElement.style.backgroundColor="red")
+        }
+       // function upparcase(){
+           // var a=document.getElementById("firstname");
+           // a.value=a.value.toUpperCase()
+        // }
+        function color(){
+            //alert("enter");
+        }
+        function lowercase(event,object){
+            event.srcElement.style.backgroundColor="green"
+        }
+        function lastname(event,object){
+            searchlastname(event)
             event.srcElement.value = event.srcElement.value.toUpperCase()
         }
-        function tackEventOrder(event){
-            console.log(event)
-        }
-        function upparcase(){
-            var a=document.getElementById("firstname");
-            a.value=a.value.toUpperCase()
+        function searchlastname(event){
+            event.srcElement.classList.add('bg-info')
+            // event.srcElement.style.backgroundColor="blue"
         }
     </script>
 </head>
 <body >
-    <form action="#" >
+    <form action="#" method="post"  novalidate  >
     
         <div class="row my-2 p-3">
             <div class="col-6 offset-3">
@@ -36,17 +51,16 @@
                 <div class="row my-2 p-3">
                     <div class="col-6">
                         <label for="firstname">First Name:</label>
-                        <input type="text" name="first_name"  onblur="upparcase()"
-                       
-                        
-                        
-                        
+                        <input type="text" name="first_name" myname="Vipan" required onfocus="upparcase(event,this)" onblur="lowercase(event,this)"
+                        onclick="today(event)"  
                         
                         class="form-control" id="firstname" placeholder="enter your first name">
                     </div>
                     <div class="col-6">
-                        <label for="lastname">Last Name:</label>
-                        <input type="text" name="last_name" class="form-control" id="lastname" placeholder="enter your last name">
+                        <label for="lastname_id">Last Name:</label>
+                        <input type="text" name="last_name" class="form-control" onfocus="console.log(lastname_id ); lastname(event,this)"
+                        onclick="searchlastname(event)"
+                        id="lastname_id" placeholder="enter your last name">
                     </div>
                 </div>
                 <div class="row my-2 p-3">
@@ -56,7 +70,7 @@
                     </div>
                     <div class="col-6">
                         <label for="email_id">Email</label>
-                        <input type="email" name="email" id="email_id" class="form-control" placeholder="enter your email">
+                        <input type="email" name="email" id="email_id" required class="form-control" placeholder="enter your email">
                     </div>
                 </div>
                 <div class="row my-2 p-3">
@@ -82,7 +96,7 @@
                 </div>
                 <div class="row my-2 p-3">
                     <div class="col-6">
-
+                        <button type="submit" class="btn btn-outline-success" class="form-control">Submit</button>
                     </div>
                     <div class="col-6">
 
