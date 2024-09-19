@@ -33,10 +33,34 @@
             searchlastname(event)
             event.srcElement.value = event.srcElement.value.toUpperCase()
         }
-        function searchlastname(event){
-            event.srcElement.classList.add('bg-info')
-            // event.srcElement.style.backgroundColor="blue"
+        function lastname1(event){
+           // event.srcElement.classList.add('bg-info')
+            console.log(event.srcElement.style.backgroundColor="green")
         }
+        function searchlastname(event,object){
+            event.srcElement.style.backgroundColor="red"
+        } 
+        function email1(event){
+           // event.srcElement.classList.add('bg-info')
+            console.log(event.srcElement.style.backgroundColor="red")
+        }
+        function email2(event,object){
+            event.srcElement.style.backgroundColor="green"
+        } 
+        function dob1(event){
+           // event.srcElement.classList.add('bg-info')
+            console.log(event.srcElement.style.backgroundColor="red")
+        }
+        function dob2(event,object){
+            event.srcElement.style.backgroundColor="green"
+        } 
+        function add1(event){
+           // event.srcElement.classList.add('bg-info')
+            console.log(event.srcElement.style.backgroundColor="red")
+        }
+        function add2(event,object){
+            event.srcElement.style.backgroundColor="green"
+        } 
     </script>
 </head>
 <body >
@@ -58,7 +82,7 @@
                     </div>
                     <div class="col-6">
                         <label for="lastname_id">Last Name:</label>
-                        <input type="text" name="last_name" class="form-control" onfocus="console.log(lastname_id ); lastname(event,this)"
+                        <input type="text" name="last_name" class="form-control" onfocus="console.log(lastname_id )" onblur="lastname1(event,this)"
                         onclick="searchlastname(event)"
                         id="lastname_id" placeholder="enter your last name">
                     </div>
@@ -66,17 +90,26 @@
                 <div class="row my-2 p-3">
                     <div class="col-6">
                         <label for="DOB">DOB</label>
-                        <input type="date" name="DOB" class="form-control" id="DOB" placeholder="Date of Birth">
+                        <input type="date" name="DOB" class="form-control" id="DOB" onfocus="dob1(event,this)" onblur="dob2(event,this)" 
+                        onclick="emaildone(event)"
+                            placeholder="Date of Birth">
                     </div>
                     <div class="col-6">
                         <label for="email_id">Email</label>
-                        <input type="email" name="email" id="email_id" required class="form-control" placeholder="enter your email">
+                        <input type="email" name="email" id="email_id" required onfocus="email1(event,this)" onblur="email2(event,this)" 
+                          onclick="dob3(event)"
+                        
+                        
+                        class="form-control" placeholder="enter your email">
+                        
                     </div>
                 </div>
                 <div class="row my-2 p-3">
                     <div class="col-12">
                         <label for="Address"> Address</label>
-                        <textarea class="form-control" id="Address" placeholder="123,main,city"></textarea>
+                        <textarea class="form-control" id="Address" onfocus="add1(event,this)" onblur="add2(event,this)" 
+                        onclick="add3(event)"
+                         placeholder="123,main,city"></textarea>
                     </div>
                 </div>
                 <div class="row my-2 p-3">
