@@ -13,13 +13,13 @@
         bgColor="red";
         }
         function upparcase(event,object){
-            today(event)
+            today(event) 
             event.srcElement.value = event.srcElement.value.toUpperCase()
 
         }
         function today(event){
-            // console.log(event.srcElem/   ent)
-            event.srcElement.style.backgroundColor="red"
+            console.log(event.srcElement)
+           // event.srcElement.style.backgroundColor="red"
         }
        // function upparcase(){
            // var a=document.getElementById("firstname");
@@ -28,18 +28,29 @@
         function color(){
             //alert("enter");
         }
+
+
+
         function lowercase(event,object){
             console.log("blur")
-            event.srcElement.style.backgroundColor="green"
-            if (temp1.classList.contains(text-changed)){
-                console.log(temp1.classList.contains(text-changed))
+            event.srcElement.style.backgroundColor="green";
+            
+            if (event.classList.contains("text-changed")){
+                console.log(event.classList.contains("text-changed"))
+                event.classList.remove("text-changed")
+                console.log("remove")
             }
             else {
-    console.log(temp1.classList.contains("text-changed"))
-    temp1.classList.add('text-changed')
-    console.log("added");
+    console.log(event.classList.contains("text-changed"))
+    event.classList.add("text-changed")
+     console.log("added");
             }
         }
+
+
+
+
+
         function lastname(event,object){
             searchlastname(event)
             event.srcElement.value = event.srcElement.value.toUpperCase()
@@ -93,14 +104,14 @@
                 <div class="row my-2 p-3">
                     <div class="col-6">
                         <label for="firstname">First Name:</label>
-                        <input type="text" name="first_name" myname="Vipan" required onfocus="upparcase(event,this)" onblur="lowercase(event,this)"
+                        <input type="text" name="first_name" myname="Vipan" required onfocus="upparcase(event,this)" onblur="today(event,this)"
                        onchange="detectChange(event,this)"
                         
                         class="form-control" id="firstname" placeholder="enter your first name">
                     </div>
                     <div class="col-6">
                         <label for="lastname_id">Last Name:</label>
-                        <input type="text" name="last_name" class="form-control" onfocus="" onblur="lastname1(event,this)"
+                        <input type="text" name="last_name" class="form-control" onfocus="" onblur="today(event,this)"
                         onclick="searchlastname(event)"
                         id="lastname_id" placeholder="enter your last name">
                     </div>
@@ -108,13 +119,12 @@
                 <div class="row my-2 p-3">
                     <div class="col-6">
                         <label for="DOB">DOB</label>
-                        <input type="date" name="DOB" class="form-control" id="DOB" onfocus="dob1(event,this)" onblur="dob2(event,this)" 
-                       
+                        <input type="date" name="DOB" class="form-control" id="DOB" onfocus="dob1(event,this)" onblur="today(event,this)" 
                             placeholder="Date of Birth">
                     </div>
                     <div class="col-6">
                         <label for="email_id">Email</label>
-                        <input type="email" name="email" id="email_id" required onfocus="email1(event,this)" onblur="email2(event,this)" 
+                        <input type="email" name="email" id="email_id" required onfocus="email1(event,this)" onblur="today(event,this)" 
                          
                         
                         
