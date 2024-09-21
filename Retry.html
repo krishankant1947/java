@@ -9,11 +9,11 @@
 
      <script type="text/javascript">
         function redcolor(event,object){
-            event.srcElement.style.backgroundColor="red"
+            event.srcElement.style.backgroundColor="lightpink"
             console.log("focus")
         }
         function greencolor(event,object){
-            event.srcElement.style.backgroundColor="green"
+            event.srcElement.style.backgroundColor="lightgreen"
             console.log("blur")
             if (event.srcElement.classList.contains("text-changed")){
                 console.log(event.srcElement.classList.contains("text-changed"))
@@ -22,8 +22,8 @@
             }
             else {
                    console.log(event.srcElement.classList.contains("text-changed"))
-                   event.srcElement.classList.add("text-changed")
-                   console.log("added");
+                   event.srcElement.classList.add("")
+                   console.log("");
             }
         }
         function bluecolor(event,object){
@@ -31,16 +31,20 @@
             console.log("blue")
         }
      </script>
-
+    <style type="text/css">
+         .card{
+           background-image: url(HE.jpg);
+        }
+    </style>
 
 </head>
 <body>
-    <form action="#" method="post">
+    <form action="#" method="post" novalidate>
         <div class="row">
             <div class="col-6 offset-3" >
                 <div class="card">
                     <div>
-                        <h1 class="text-center">New form</h1>
+                        <h1 class="text-center">New Form</h1>
                     </div>
                     <div class="row  p-2">
                         <div class="col-6">
@@ -59,7 +63,7 @@
                         </div>
                         <div class="col-6">
                             <label for="Emailid">Email</label>
-                            <input type="email" name="email_id" id="Emailid" placeholder="my email" class="form-control" onfocus="redcolor(event,this)"    onblur="greencolor(event,this)" onchange="bluecolor(event,this)" >
+                            <input type="email" name="email_id" id="Emailid" required placeholder="my email" class="form-control" onfocus="redcolor(event,this)"    onblur="greencolor(event,this)" onchange="bluecolor(event,this)" >
                         </div>
                     </div>
                     <div class="row  p-2">
@@ -78,10 +82,10 @@
                     </div>
                     <div class="row  p-2">
                         <div class="col-6">
-
+                            <button type="submit" class="btn btn-outline-success" class="form-control">Submit</button>
                         </div>
                         <div class="col-6">
-
+                           
                         </div>
                     </div>
                 </div>
@@ -90,3 +94,131 @@
     </form>
 </body>
 </html>
+
+
+
+
+let age = 19
+undefined
+age
+19
+let name=Krishan kant
+VM1025:1 Uncaught SyntaxError: Unexpected identifier 'kant'Understand this error
+let name="Krishan kant"
+undefined
+name
+'Krishan kant'
+let prc=50.55
+undefined
+prc
+50.55
+alert("name");
+undefined
+console.log("name")
+VM1190:1 name
+undefined
+console.log(name)
+VM1199:1 Krishan kant
+undefined
+alert(name);
+undefined
+alert(age)
+undefined
+alert(name+"is"+age+"years old")
+undefined
+alert(name+ "is" +age+ "years old")
+undefined
+alert(name +" is "+age+"years old")
+undefined
+alert(name +" is "+age+" years old")
+undefined
+name +" is "+age+" years old"
+'Krishan kant is 19 years old'
+if (age>19){
+    you are allowed}el
+VM1506:2 Uncaught SyntaxError: Unexpected identifier 'are'Understand this error
+if (age>19){
+    you are allowed}
+else{you are not allowed}
+VM1614:2 Uncaught SyntaxError: Unexpected identifier 'are'Understand this error
+if (age<19){
+    you are allowed}
+else{you are not allowed}
+VM1631:2 Uncaught SyntaxError: Unexpected identifier 'are'Understand this error
+if (age>18){
+   " you are allowed"}
+else{"you are not allowed"}
+' you are allowed'
+alert(if+else)
+VM1684:1 Uncaught SyntaxError: Unexpected token 'if'Understand this error
+alert(if (age>18){
+   " you are allowed"}
+else{"you are not allowed"}
+' you are allowed'}
+VM1815:1 Uncaught SyntaxError: Unexpected token 'if'Understand this error
+age = 18;
+if (age>18){
+   alert(" you are allowed");
+}else{
+    alert("you are not allowed");
+}
+' you are allowed'}
+VM1866:7 Uncaught SyntaxError: Unexpected token '}'Understand this error
+age = 18;
+if (age>18){
+   alert(" you are allowed");
+}else{
+    alert("you are not allowed");
+}
+' you are allowed'}
+VM1871:7 Uncaught SyntaxError: Unexpected token '}'Understand this error
+if (age>18){
+   alert(" you are allowed");
+}else{
+    alert("you are not allowed");
+}
+' you are allowed'}
+VM1887:6 Uncaught SyntaxError: Unexpected token '}'Understand this error
+if (age>18){
+   alert(" you are allowed");
+}else{
+    alert("you are not allowed");
+}
+undefined
+age = 15;
+if (age>18){
+   alert(" you are allowed");
+}else{
+    alert("you are not allowed");
+}
+undefined
+age = 21;
+if (age>18){
+   alert(" you are allowed");
+}else{
+    alert("you are not allowed");
+}
+undefined
+age = 10;
+if (age>18){
+   alert(" you are allowed");
+}else{
+    alert("you are not allowed");
+}
+undefined
+prompt("enter your name"," name")
+' name'
+prompt("enter your name", name)
+'Krishan kant'
+prompt("enter your name", name)
+'vhvhvvhv'
+name = prompt("enter your name", name)
+'[oiohihi'
+name = prompt("enter your name", name)
+'ooooooooooo'
+name = prompt("enter your name", name)
+'iioio'
+name = prompt("enter your name", name)
+'iioio'
+name.toUpperCase()
+'IIOIO'
