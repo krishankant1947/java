@@ -87,3 +87,4 @@ for($a=1;  $a<=10; $a = $a+1){
     </table>
 </body>
 </html>
+https://www.tutorialspoint.com/php/php_object_oriented.htm
