@@ -3,6 +3,15 @@
 // error_reporting(0);
 // ini_set('display_errors', 0);
 
+for (let i=1;i<=12;i++){
+    for (let a=1; a<=12-1; a++){
+        Document.write("&nbsp");
+    }
+    for(let c=1; c<=i c++){
+        Document.write("*");
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
