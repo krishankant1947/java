@@ -6,15 +6,29 @@ $name="Krishan kant";
     'name'=>"Krishan kant",
     "age"=>"19",
     "class"=>"12",
+    "asdkfj"=>"AAAAAAAA"
    ];
  echo  $associt["name"];
 
 
- $test=["1",'b','c'];
+ $test=["1",'b','c','dfasfa'];
    echo $test[1];
 
-$name = $associt['name'] . ' ' . $test[0] . 'vipan kumar';
+$name = $associt['age'] . ' ' . $test[1] . ' - ' .  "" .'vipan kumar';
+
+$test[] = __LINE__;
+$test[] = __LINE__;
+$test[] = __LINE__;
+$associt["vp;ioasdfhapsofdhnasodihfpasoi"] = "|sadfasdfasdf";
+var_dump($test, $associt['name']);
 
 
-var_dump($name);
+for($a=0; $a<count($test); $a++){
+
+    printf("%s<br/>", $test[$a]);
+}
+
+foreach($associt as $x => $d ){
+    printf("%s => %s == %s <br/>", $associt[$x], $x, $d);
+}
 ?>
