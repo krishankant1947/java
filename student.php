@@ -56,3 +56,87 @@ TRROW;
     </table>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <?php
+$students = [
+    ['name'=>'Vipan Kumar','father'=>'abc','mother'=>'rajandeep','hindi'=>'master','English'=>'master','Math'=>'master','Science'=>'master','SST'=>'master','Punjabi'=>'master'],
+    ['name'=>'Krishan kant','father'=>' ABC','mother'=>'rajarani','hindi'=>'master','English'=>'master','Math'=>'master','Science'=>'master','SST'=>'master','Punjabi'=>'master'],
+    ['name'=>'Rahul','father'=>'DEFG','mother'=>'rani','hindi'=>'master','English'=>'master','Math'=>'master','Science'=>'master','SST'=>'master','Punjabi'=>'master'],
+    ['name'=>'suraj kumar' ,'father'=>'SHARUN','mother'=>'chinkio','hindi'=>',master','English'=>'master','Math'=>'master','Science'=>'master','SST'=>'master','Punjabi'=>'master'],
+    ['name'=>'Vijy Kumar  ','father'=>'jasjot','mother'=>'pinki','hindi'=>'master','English'=>'master','Math'=>'master','Science'=>'master','SST'=>'master','Punjabi'=>'master'],
+];
+
+?>;
+</head>
+<body>
+    
+
+
+<table border="2" width="100%">
+<tr>
+    <td>Roll no</td>
+    <td>Name</td>
+    <td>Father name</td>
+    <td>Mother name</td>
+    <td>hindi</td>
+    <td>English</td>
+    <td>Math</td>
+    <td>Science</td>
+    <td>SST</td>
+    <td>Punjabi</td>
+</tr>
+<?php 
+foreach($students as $key => $value){
+    $series = 'BCA-'.($key+1);
+    echo <<<TRROW
+    <tr>
+        <td>$series</td>
+        <td>{$value['name']}</td>
+        <td>{$value['father']}</td>
+        <td>{$value['mother']}</td>
+        <td>{$value['hindi']}</td>
+        <td>{$value['English']}</td>
+        <td>{$value['Math']}</td>
+        <td>{$value['Science']}</td>
+        <td>{$value['SST']}</td>
+         <td>{$value['Punjabi']}</td>
+        
+    </tr>
+TRROW;
+}
+
+?>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
