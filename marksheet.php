@@ -11,16 +11,13 @@ $students = [
     ['name'=>'Krishan kant','father'=>' ABC','mother'=>'rajarani','hindi'=>'92','English'=>'84','Math'=>'98','Science'=>'91','SST'=>'88','Punjabi'=>'90','Total'=>''],
     ['name'=>'Rahul','father'=>'DEFG','mother'=>'rani','hindi'=>'79','English'=>'89','Math'=>'95','Science'=>'A','SST'=>'81','Punjabi'=>'91','Total'=>''],
     ['name'=>'suraj kumar' ,'father'=>'SHARUN','mother'=>'chinkio','hindi'=>'95','English'=>'96','Math'=>'91','Science'=>'79','SST'=>'93','Punjabi'=>'95','Total'=>''],
-    ['name'=>'Vijy Kumar  ','father'=>'jasjot','mother'=>'pinki','hindi'=>'92','English'=>'78','Math'=>'89','Science'=>'89','SST'=>'80','Punjabi'=>'89','Total'=>''],
+    ['name'=>'Vijay Kumar  ','father'=>'jasjot','mother'=>'pinki','hindi'=>'92','English'=>'78','Math'=>'89','Science'=>'89','SST'=>'80','Punjabi'=>'89','Total'=>''],
 ];
 
-?>;
+?>
 </head>
-<body>
-    
-
-
-<table border="2" width="100%">
+<body>    
+       <table border="1" width="100%">
 <tr>
     <td>Class</td>
     <td>Name</td>
@@ -57,17 +54,5 @@ TRROW;
 
 ?>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
