@@ -16,7 +16,7 @@
                 <img src="download (1).jfif" class="text-center">  
                 </div>
             </div>
-
+1
             <div class="alert">
                 <?php
                 if( empty($_GET['emailid']) ){
