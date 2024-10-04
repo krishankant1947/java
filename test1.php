@@ -8,17 +8,28 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <form action=""  method="get">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>"  method="get">
         <div class="row">
             <div class="col-4 offset-4">
             <div class="row my-1">
                     <div class="col-12">
                            <img src="ghk.jfif" >
                         </div>
+
+
+                        <?php
+                if( empty($_GET['userpasswordentry']) ){
+                    echo '<div class="alert alert-danger">password are not match</div>';
+                }
+                ?>
+
+
                 <div class="row my-1">
                     <div class="col-12">
                         <div class="form-floating">
-                            <input type="text" class="form-control" name="userentry" id="Usernamelogin">
+                            <input type="text" class="form-control" name="userentry"
+                            value= "<?php  echo isset($_GET["userentry"])  ?$_GET['userentry']:"control";?>" 
+                            id="Usernamelogin">
                             <label for="Usernamelogin">Username:</label>
                         </div>
                      </div>
@@ -26,7 +37,9 @@
                 <div class="row my-1">
                     <div class="col-12">
                         <div class="form-floating">
-                            <input type="text"  class="form-control" name="useremailentry" id="Useremaillogin">
+                            <input type="text"  class="form-control" name="useremailentry"
+                            value= "<?php  echo isset($_GET["useremailentry"])  ?$_GET['useremailentry']:"blank";?>" 
+                            id="Useremaillogin">
                             <label for="Useremaillogin">Email:</label>
                         </div>
                     </div>
@@ -50,12 +63,31 @@
                 <div class="row">
                 <div class="col-6">
                     <div class="form-floating" >
-                <button type="submit" class="form-control" >login </button>
+                <button type="submit" class="btn btn-danger" >login </button>
                 </div>
                 </div>
             </div>
             </div><!--offset-->
         </div><!--row-->
+
+        <?php
+    if(empty($_GET["userentry"])){     
+        echo "enter user name";
+    }
+    else {
+        printf("correct username %s ?", $_GET['userentry']);
+    }
+  //  print_r($_GET);
+
+
+if(empty($_GET["useremailentry"])){
+    echo "sorry your email are not found";
+}
+else {
+    printf("Are you sure your email %s ", htmlspecialchars_decode($_GET['useremailentry']));
+}
+//print_r($_GET);
+    ?>
     </form>
 </body>
 </html>
