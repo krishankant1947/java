@@ -6,6 +6,19 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script type="text/javascript">
+        function element(){
+            
+            if(userpasswordentry.length != 0){
+                    if(userpasswordentry== userreentry){
+                        message.textContent ="password match";
+                    }
+                    else{
+                        message.textContent = "password not match";
+                    }
+                }
+        }
+    </script>
 </head>
 <body>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>"  method="get">
@@ -21,6 +34,8 @@
                 if( empty($_GET['userpasswordentry']) ){
                     echo '<div class="alert alert-danger">password are not match</div>';
                 }
+
+
                 ?>
 
 
