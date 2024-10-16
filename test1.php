@@ -55,6 +55,14 @@
                     if(empty($_GET['userpasswordentry'])){
                         echo '<div class="alert alert-danger">Missing your password</div>';
                     }
+                    elseif (strlen($_GET['userpasswordentry'])<5) {
+                        echo '<div class="alert alert-danger">PASSWORD SHOULD BE MORE THAN five</div>';
+                    }
+                    if($_GET['userpasswordentry']!== $_GET['userreentry']){
+                        echo '<div class="alert alert-danger">PASSWORDmiss match</div>';
+                    }
+
+
                     ?>
 
                 <div class="row my-1">
@@ -91,7 +99,8 @@
                 <div class="row my-1">
                     <div class="col-12">
                        <div class="form-floating">
-                            <input type="text"  class="form-control" name="userreentry" id="Userconfirmpass">
+                            <input type="text"  class="form-control" name="userreentry"
+                            id="Userconfirmpass">
                             <label for="Userconfirmpass">Confirm Password:</label>
                          </div>
                     </div>
