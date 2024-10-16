@@ -20,9 +20,9 @@
                 }
         }
          function trackevents(event){
-            event.preventDefault();
-            pass = document.getElementById("Userpassword").value;
-            alert("dsa")
+            //event.preventDefault();
+           // pass = document.getElementById("Userpassword").value;
+            //alert("dsa")
            // console.log(event.type)
          }
     </script>
@@ -33,24 +33,35 @@
             <div class="col-4 offset-4">
             <div class="row my-1">
                     <div class="col-12">
-                           <img src="ghk.jfif" >
+                           <img src="ghk.jfif" class="text-center" >
                         </div>
 
 
                         <?php
-              //  if( empty($_get['userpasswordentry']) ){
+              //  if( empty($_GET['userpasswordentry']) ){
                 //    echo '<div class="alert alert-danger">password are not match</div>';
                // }
 
 
                 ?>
+                    <?php
 
+                    if(empty($_GET['userentry'])){
+                        echo '<div class="alert alert-danger">Missing your Username</div>';
+                    }
+                    if(empty($_GET['useremailentry'])){
+                        echo '<div class="alert alert-danger">Missing your Email</div>';
+                    }
+                    if(empty($_GET['userpasswordentry'])){
+                        echo '<div class="alert alert-danger">Missing your password</div>';
+                    }
+                    ?>
 
                 <div class="row my-1">
                     <div class="col-12">
                         <div class="form-floating">
                             <input type="text" class="form-control" name="userentry"
-                            value= "<?php  echo isset($_get["userentry"]) ?$_get['userentry']:"";?>" 
+                            value= "<?php  echo isset($_GET["userentry"]) ?$_GET['userentry']:"";?>" 
                             id="Usernamelogin">
                             <label for="Usernamelogin">Username:</label>
                         </div>
@@ -60,16 +71,19 @@
                     <div class="col-12">
                         <div class="form-floating">
                             <input type="text"  class="form-control" name="useremailentry"
-                            value= "<?php  echo isset($_get["useremailentry"])  ?$_get['useremailentry']:"";?>" 
+                            value= "<?php  echo isset($_GET["useremailentry"])  ?$_GET['useremailentry']:"";?>" 
                             id="Useremaillogin">
                             <label for="Useremaillogin">Email:</label>
                         </div>
                     </div>
                 </div>
+
                 <div class="row my-1">
                     <div class="col-12">
                         <div class="form-floating">
-                            <input type="text"  class="form-control" name="userpasswordentry" id="Userpassword">
+                            <input type="text"  class="form-control" name="userpasswordentry"
+                            value= "<?php  echo isset($_GET["userpasswordentry"]) ?$_GET['userpasswordentry']:"";?>" 
+                            id="Userpassword">
                             <label for="Userpassword">Password:</label>
                         </div>
                     </div>
@@ -95,52 +109,24 @@
             </div><!--offset-->
         </div><!--row-->
 
-        <?php
-    if(empty($_get["userentry"])){     
+      <?php
+    /*if(empty($_GET["userentry"])){     
         echo "enter user name";
     }
     else {
-        printf("correct username %s ?", $_get['userentry']);
+        printf("correct username %s ?", $_GET['userentry']);
     }
-  //  print_r($_get);
+  //  print_r($_GET);
 
 
-if(empty($_get["useremailentry"])){
+if(empty($_GET["useremailentry"])){
     echo "sorry your email are not found";
 }
 else {
-    printf("Are you sure your email %s ",($_get['useremailentry']));
-}
+    printf("Are you sure your email %s ",($_GET['useremailentry']));
+}*/
 
-    ?>
+    ?> 
     </form>
 </body>
 </html>
-userpasswordentry
-test1.php?userentry=&useremailentry=&userpasswordentry=tr&userreentry=:13 Uncaught ReferenceError: userpasswordentry is not defined
-    at checkpassword (test1.php?userentry=&useremailentry=&userpasswordentry=tr&userreentry=:13:13)
-    at HTMLButtonElement.onblur (test1.php?userentry=&useremailentry=&userpasswordentry=tr&userreentry=:84:18)
-checkpassword @ test1.php?userentry=&useremailentry=&userpasswordentry=tr&userreentry=:13
-onblur @ test1.php?userentry=&useremailentry=&userpasswordentry=tr&userreentry=:84Understand this error
-pass = document.getElementById('Userpassword').value
-''
-pass
-''
-test1.php?userentry=&useremailentry=&userpasswordentry=tr&userreentry=:12 userpasswordentry
-test1.php?userentry=&useremailentry=&userpasswordentry=tr&userreentry=:13 Uncaught ReferenceError: userpasswordentry is not defined
-    at checkpassword (test1.php?userentry=&useremailentry=&userpasswordentry=tr&userreentry=:13:13)
-    at HTMLButtonElement.onblur (test1.php?userentry=&useremailentry=&userpasswordentry=tr&userreentry=:84:18)
-checkpassword @ test1.php?userentry=&useremailentry=&userpasswordentry=tr&userreentry=:13
-onblur @ test1.php?userentry=&useremailentry=&userpasswordentry=tr&userreentry=:84Understand this error
-pass = document.getElementById('Userpassword').value
-'ssssssssssssssssssssss'
-pass
-'ssssssssssssssssssssss'
-pass = document.getElementById('Userpassword').value
-console.log(pass)
-VM1728:2 ssssssssssssssssssssss
-undefined
-confirm = document.getElementById('Userconfirmpass').value
-'asdfasdfasdf'
-pass == confirm
-false

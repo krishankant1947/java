@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-6">
                 <div class="form-floating">
-                <button type="submit" class=" btn btn-danger" >Login </button>
+                <button type="submit" class=" btn btn-danger    " >Login </button>
                 </div>
                 </div>
             </div>
