@@ -60,9 +60,9 @@
                     elseif (strlen($_GET['userpasswordentry'])<5) {
                         echo '<div class="alert alert-danger">PASSWORD SHOULD BE MORE THAN five</div>';
                     }
-                    if($_GET['userpasswordentry']!== $_GET['userreentry']){
-                        echo '<div class="alert alert-danger">PASSWORDmiss match</div>';
-                    }
+                  //  if($_GET['userpasswordentry']!== $_GET['userreentry']){
+                     //   echo '<div class="alert alert-danger">PASSWORDmiss match</div>';
+                    //}
 
 
                     ?>
@@ -121,7 +121,7 @@
         </div><!--row-->
 
         <?php
-    if(empty($_GET["userentry"])){     
+    /*if(empty($_GET["userentry"])){     
         echo "enter user name";
     }
     else {
@@ -135,8 +135,31 @@ if(empty($_GET["useremailentry"])){
 else {
     printf("Are you sure your email %s ", htmlspecialchars_decode($_GET['useremailentry']));
 }
-//print_r($_GET);
+//print_r($_GET);*/
     ?>
     </form>
+
+    <?php
+$a = array('Krishan');
+$b = array('kant');
+$c = array_combine($a, $b);
+
+print_r($c);
+
+$array = array(1, "hello", 1, "world", "hello", 1,"Hello");
+print_r(array_count_values($array));
+
+$array1 = array("a" => "green", "red", "blue","pink", "red");
+$array2 = array("b" => "green", "yellow","pink", "red");
+$result = array_diff($array1, $array2);
+
+print_r($result);
+
+hello
+
+
+
+
+?>
 </body>
 </html>
