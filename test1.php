@@ -19,6 +19,8 @@
                 }
         }
     </script>
+    
+
 </head>
 <body>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>"  method="get">
@@ -34,7 +36,7 @@
                 if( empty($_GET['userpasswordentry']) ){
                     echo '<div class="alert alert-danger">password are not match</div>';
                 }
-
+1
 
                 ?>
 
@@ -86,22 +88,23 @@
         </div><!--row-->
 
         <?php
+     //print_r($_GET);
+
     if(empty($_GET["userentry"])){     
         echo "enter user name";
     }
     else {
         printf("correct username %s ?", $_GET['userentry']);
     }
-  //  print_r($_GET);
-
+   
 
 if(empty($_GET["useremailentry"])){
     echo "sorry your email are not found";
 }
 else {
-    printf("Are you sure your email %s ", htmlspecialchars_decode($_GET['useremailentry']));
+    printf("Are you sure your email %s ",($_GET['useremailentry']));
 }
-//print_r($_GET);
+
     ?>
     </form>
 </body>
