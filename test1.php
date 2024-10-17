@@ -137,6 +137,10 @@ else {
 }
 //print_r($_GET);
     ?>
+
+<a href="https://www.php.net/manual/en/function.array-chunk.php" target="_blank">Array Functions</a>
+<a href="https://www.php.net/manual/en/function.ltrim.php" target="_blank">Tring Functions</a>
+https://www.php.net/manual/en/function.array-chunk.php 
     </form>
 </body>
 </html>
