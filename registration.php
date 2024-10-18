@@ -1,4 +1,61 @@
- <!DOCTYPE html>
+
+<?php/*
+$dsn="";
+define("host","localhost");
+define("username","root");
+define("password","root");
+define("dbname","employees");
+ try{
+$mysqli =new mysqli(host,username,password,dbname);
+ }catch(\Exception $ex){
+    echo $ex-> getMessage(),'---',$ex-> getLine();
+    die;
+ }
+ $result= $mysqli->query("select * from emp");
+*/
+?>
+
+
+
+<?php
+$dsn = "";
+// PDO // 15-15
+
+// MySQLi
+$a = "va";
+$a = "xa";
+define("host", "localhost");
+define("username", "root");
+define("password", "root");
+define("dbname", "school");
+
+try{
+    $mysqli = new mysqli(host, username, password, dbname);
+} catch(\Exception $ex){
+    echo $ex->getMessage(), '---', $ex->getLine();
+    die;
+}
+
+$sql = "insert into teacher(name, Father_name, mother_name) value('Krish kant','br','". time(). "')";
+$mysqli->query($sql);
+echo $sql,"<br/>";
+$result = $mysqli->query("select * from teacher");
+
+//echo '<table width="100%">';
+//while ($row = $result->fetch_row()) {
+    // echo $row[0];
+   // printf("
+    //<tr>
+        ///<td>%d</td>
+      //  <td>%s</td>
+        //<td>%s</td>
+        //<td>%s</td>
+       // </tr>"
+        //, $row[1], $row[2], $row[3]);
+//}
+echo "</table>";
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
