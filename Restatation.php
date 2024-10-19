@@ -6,39 +6,6 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-     <style>
-        .container-fluid{
-            background-image:url(log.png);
-        }
-     </style>
-     <script type="text/javascript">
-        function limitFirstName(event, object){
-            tackEventOrder(event)
-            // console.log(event.srcElement, object)
-            event.srcElement.value = event.srcElement.value.toUpperCase()
-        }
-        function trackMouse(event){
-          //  event.preventDefault();
-            console.log(event.type)
-        }
-        function tackEventOrder(event){
-            console.log(event.type)
-        }
-        function limitaddressName(event){
-            tackproOrder(event)
-            // console.log(event.srcElement, object)
-            event.srcElement.value = event.srcElement.value.toUpperCase()
-        }
-        console.log("hello")
-        function limitaddressName(event){
-            tackEventOrder(event)
-            event.srcElement.value = event.srcElement.value.toUpperCase()
-        }
-        function thisnumber(){
-            trackkey(event)
-            
-        }
-     </script>
 </head>
 <body>
 <form method="post" action="dbx.html">
@@ -52,13 +19,8 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="first_name">First Name:</label>
-                                <input onkeypress="limitFirstName(event, this)"
-                                onkeyup="tackEventOrder(event)"
-                                onblur="tackEventOrder(event)"
-                                onfocus="tackEventOrder(event)"
-                                onchange="tackEventOrder(event)"
-                                ondblclick="tackEventOrder(event)"
-                                type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name" required/>
+                                
+                               <input  type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name" required/>
                             </div>
                             <div class="col-6">
                                 <label for="Last_name">Last Name:</label>
@@ -78,12 +40,7 @@
                         <div class="row my-2">
                             <div class="col-12">
                                 <label> Address:</label>
-                                <textarea class="form-control"  onkeypress="limitaddressName(event, this)"
-                                onmousedown="tackeventOrder(event)"
-                                onmousewheel="tackeventOrder(event)"
-                                onfocus="tackeventOrder(event)"
-                                onkeydown="tackeventOrder(event)"
-                                onkeyup="tackeventOrder(event)" id="inputAddress" name="address" placeholder="XYZ"></textarea>
+                                <textarea class="form-control" id="inputAddress" name="address" placeholder="XYZ"></textarea>
                             </div>
                         </div>
                         <div class="row my-2">
@@ -112,18 +69,23 @@
                                 <input type="text" name="Pin_code" id="pinnumber"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        class="form-control" placeholder="City pin code no">
                             </div>
                         </div>
+                        <div class="row my-1" >
+                            <div class="col-6">
+                              <label for="profile_pic">Profile Pic</label>
+                              <input type="file" name="dp" id="profile_pic"/>
+                            </div>
+                        <div class="col-6">
+                              <label for="Document_pic">10 th makesheet</label>
+                              <input type="file" name="dp" id="Document_pic"/>
+                            </div>
+                        </div>
+                        </div>
                         <div class="row">
                             <div class="col-5">
                                 <button type="submit" class="btn btn-outline-success" class="form-control">Submit</button>
                             </div>
                         </div>
-                        <div class="row my-2">
-                            <div class="col-6">
-                                <label for="number"> phone number</label> 
-                                <input type="number" class="form-control" onclick="thisnumber(event)" id="number"  placeholder="mobile number">
-                               
-                            </div>
-                        </div>
+
                     </div>
             
                 </div>

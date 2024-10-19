@@ -159,10 +159,6 @@ $result = array_diff($array1, $array2);
 
 print_r($result);
 
-hello
-
-hevb
-
 
 ?>
 </body>
