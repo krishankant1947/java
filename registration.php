@@ -1,19 +1,5 @@
 
-<?php/*
-$dsn="";
-define("host","localhost");
-define("username","root");
-define("password","root");
-define("dbname","employees");
- try{
-$mysqli =new mysqli(host,username,password,dbname);
- }catch(\Exception $ex){
-    echo $ex-> getMessage(),'---',$ex-> getLine();
-    die;
- }
- $result= $mysqli->query("select * from emp");
-*/
-?>
+
 
 
 
@@ -27,7 +13,7 @@ $a = "xa";
 define("host", "localhost");
 define("username", "root");
 define("password", "root");
-define("dbname", "school");
+define("dbname", "emp");
 
 try{
     $mysqli = new mysqli(host, username, password, dbname);
@@ -41,18 +27,18 @@ $mysqli->query($sql);
 echo $sql,"<br/>";
 $result = $mysqli->query("select * from teacher");
 
-//echo '<table width="100%">';
-//while ($row = $result->fetch_row()) {
-    // echo $row[0];
-   // printf("
-    //<tr>
-        ///<td>%d</td>
-      //  <td>%s</td>
-        //<td>%s</td>
-        //<td>%s</td>
-       // </tr>"
-        //, $row[1], $row[2], $row[3]);
-//}
+echo '<table width="100%">';
+while ($row = $result->fetch_row()) {
+     echo $row[0];
+   printf("
+    <tr>
+        <td>%d</td>
+        <td>%s</td>
+      <td>%s</td>
+      <td>%s</td>
+       </tr>"
+      , $row[1], $row[2], $row[3]);
+}
 echo "</table>";
 ?>
 <!DOCTYPE html>
