@@ -8,7 +8,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="first.css">
 </head>
-<body class="bg-primary-subtle">
+<body class="bg-primary-subtle  border border-black">
     <div class="row">
       <div class="col-12">
         <div class="navbar" style="position: relative;">
@@ -16,7 +16,7 @@
           <ul class="navbar-nav nav-right">
            
             <li class="nav-item">
-              <img src="https://cmc.thewebking.in/bible-test-2024/assets/school_logo.png" alt="Webking logo" width="90%">
+              <img src="https://cmc.thewebking.in/bible-test-2024/assets/school_logo.png" alt="collage" width="90%">
               
             </li>
           </ul>
@@ -27,7 +27,7 @@
          
           <ul class="navbar-nav nav-right">
           <li class="nav-item">
-              <img src="https://cmc.thewebking.in/bible-test-2024/assets/school_logo.png" alt="Webking logo" width="90%">
+              <img src="https://cmc.thewebking.in/bible-test-2024/assets/school_logo.png" alt="collage" width="90%">
               
             </li>
             </ul>
@@ -52,14 +52,14 @@
 </br>
 <marquee>
             <p style="text-align: center;">
-              <span style=" font-weight: bold; color: red; font-size: 16px;">NOTICE (7/9/2024) : The verification of Christian Minority Candidates for eligibility (Round 2) will be held ONLINE</span>
+              <span style=" font-weight: bold; color: red; font-size: 16px;">NOTICE (21/10/2024) : The verification of Christian Minority Candidates for eligibility (Round 2) will be held ONLINE</span>
             </p>
 </marquee>
             <p style="text-align: center;">
-              <span style=" font-weight: bold; color: blue; font-size: 16px;">NOTICE(7/9/24): BIBLE TEST III DATE: 9 Sep 2024, 3:00 PM, LUDHIANA</span>
+              <span style=" font-weight: bold; color: blue; font-size: 16px;">NOTICE(21/10/24): BIBLE TEST III DATE: 25 Oct 2024, 3:00 PM, LUDHIANA</span>
             </p>
             <p style="text-align: center;">
-              <span style=" font-size: 16px; text-decoration-line: underline;">UG-MBBS/BDS BIBLE TEST III APPLICATION FORM (Updated 7 Sep 2024)</span>
+              <span style=" font-size: 16px; text-decoration-line: underline;">UG-MBBS/BDS BIBLE TEST III APPLICATION FORM (Updated 21 Oct 2024)</span>
             </p>
             <ul>
               <li>
@@ -78,7 +78,7 @@
               <li>
                 <p>
                   <span style="font-weight: bold; color: red; font-size: 16px;">
-                    Last date of filling this online form along with fee payment for Bible Test III is by 9:00 AM 9th September 2024. 
+                    Last date of filling this online form along with fee payment for Bible Test III is by 9:00 AM 25th October 2024. 
                   </span>
                 </p>
               </li>
@@ -86,6 +86,8 @@
               <li>After final submit a pdf will be generated which needs to be signed after printing and posted to "The Registrar, CMC Ludhiana, Punjab, India" along with enclosures to reach on or before 11:00 AM on 9th September 2024</li>
               <li>Keep monitoring the website for updates and any change in dates</li>
             </ul>
-            
+
+
+            <button type="button" title="Feedback" class="btn btn-primary "  style=" text-align: center;  background-color: rgb(232, 116, 0);  color: white">Feedback</button>
 </body>
 </html>

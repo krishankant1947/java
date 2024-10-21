@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-
-
-
-
-
-=======
 <?php
 //$dsn= "";
 define("host","localhost");
@@ -23,7 +16,6 @@ $sql = "insert into emp(FNAME,LNAME,Gender) value('Krish kant','br','m')";
 //$mysqli->query($sql);
 echo $sql,"<br/>";
 //$result = $mysqli->query("select * from emp");
->>>>>>> 796e43ee9182a88ef40b16450212a062c7eb20cb
 <?php
 $dsn = "";
 // PDO // 15-15
@@ -31,13 +23,10 @@ $dsn = "";
 // MySQLi
 $a = "va";
 $a = "xa";
-<<<<<<< HEAD
 define("host", "localhost");
 define("username", "root");
 define("password", "root");
 define("dbname", "emp");
-=======
->>>>>>> 796e43ee9182a88ef40b16450212a062c7eb20cb
 
 
 
@@ -55,7 +44,7 @@ while ($row = $result->fetch_row()) {
         <td>%s</td>
        </tr>" ,$row[0], $row[1], $row[2], $row[3]);
 }
-<<<<<<< HEAD
+
 
 $sql = "insert into teacher(name, Father_name, mother_name) value('Krish kant','br','". time(). "')";
 $mysqli->query($sql);
@@ -74,8 +63,6 @@ while ($row = $result->fetch_row()) {
        </tr>"
       , $row[1], $row[2], $row[3]);
 }
-=======
->>>>>>> 796e43ee9182a88ef40b16450212a062c7eb20cb
 echo "</table>";
 ?>
 <!DOCTYPE html>

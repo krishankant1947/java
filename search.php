@@ -32,7 +32,7 @@ echo '</pre>';
                 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Search</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" name="search" value="<?php echo $_POST['search'];?>" placeholder="type anything .... " required />
+  <input type="text" class="form-control" id="exampleFormControlInput1" name="search"  placeholder="type anything .... " required />
 </div>
 <button type="submit" class="btn btn-primary">Search</button>
 <button type="button" class="btn btn-secondary">Clear</button>
