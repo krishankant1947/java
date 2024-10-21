@@ -36,8 +36,8 @@
            
           
           <div class="row">
-            <div class="col-6 larse">
-              <button type="submit" class="btn btn-primary"> 
+            <div class="col-6" style="text-align: right;">
+              <button type="submit"  class="btn btn-primary"> 
                 Login
               </button>
             </div>
@@ -49,9 +49,12 @@
           </div>
        
       </div>
+</br>
+<marquee>
             <p style="text-align: center;">
               <span style=" font-weight: bold; color: red; font-size: 16px;">NOTICE (7/9/2024) : The verification of Christian Minority Candidates for eligibility (Round 2) will be held ONLINE</span>
             </p>
+</marquee>
             <p style="text-align: center;">
               <span style=" font-weight: bold; color: blue; font-size: 16px;">NOTICE(7/9/24): BIBLE TEST III DATE: 9 Sep 2024, 3:00 PM, LUDHIANA</span>
             </p>
@@ -86,4 +89,3 @@
             
 </body>
 </html>
-Done
