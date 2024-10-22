@@ -32,7 +32,7 @@ $sql= "SELECT FNAME,count(*) FROM emp e GROUP BY FNAME ";
 $data= $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 var_dump($_POST);
-$sql="select * from emp where `FNAME`=:search or LNAME=:search";
+$sql="select * from emp where FNAME=:search or LNAME=:search";
 $stmt = $pdo->prepare($sql);
 $stmt->execute($_POST);
 $rows= $stmt->fetchAll(PDO::FETCH_ASSOC);

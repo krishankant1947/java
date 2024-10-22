@@ -7,11 +7,11 @@
 </head>
 <?php
 
-// $_POST
-// $_POST
-// $_SERVER
-// $_COOKIE
-// $GLOBALS
+//  $_POST
+//  $_POST
+//  $_SERVER
+//  $_COOKIE
+//  $GLOBALS
 $_POST['first_name'] = trim( $_POST['first_name']??'');
 ?>
 <body>
@@ -28,8 +28,8 @@ $_POST['first_name'] = trim( $_POST['first_name']??'');
     } else {
         printf("Welcome %s %s", $_POST['first_name'], $_POST['last_name']);
     }
-    // print_r($_POST);
-    // print_r($_SERVER); // hold server values
+    //  print_r($_POST);
+    // print_r($_SERVER);  hold server values
 
 ?>
 </body>

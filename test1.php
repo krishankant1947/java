@@ -71,7 +71,7 @@
                     <div class="col-12">
                         <div class="form-floating">
                             <input type="text" class="form-control" name="userentry"
-                            value= "<?php  echo isset($_GET["userentry"]) ?$_GET['userentry']:"";?>" 
+                        
                             id="Usernamelogin">
                             <label for="Usernamelogin">Username:</label>
                         </div>
