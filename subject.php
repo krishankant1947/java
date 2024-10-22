@@ -68,12 +68,12 @@
 <?php
 require "config 2.php";
 print_r($_POST);    
-$sql="insert into emp (first_name , last_name, Subject_names) values(:first_name, :last_name, :Subject_name)";
+$sql="insert into test (first_name , last_name, Subject_names) values(:first_name, :last_name, :Subject_names)";
 $stmt= $pdo->prepare($sql);
 $stmt->execute([
     "first_name"=>$_POST['first_name'],
     "last_name"=>$_POST['last_name'],
-    "Subject_name"=>$_POST['Subject_names']
+    "Subject_names"=>$_POST['Subject_names']
 ]);
 
 
