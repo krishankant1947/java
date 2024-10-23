@@ -1,3 +1,19 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+session_start();
+// session_regenerate_id();
+// session_destroy();;
+echo '<pre>';
+// $_SESSION['isloggedIn'] = true;
+// $_SESSION['name'] = "Vipan";
+setcookie("name", "Vian");
+
+print_r($_COOKIE);
+print_r($_SESSION);
+echo '</pre>';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +24,13 @@
      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body >
+    <?php if(!empty($_SESSION['isloggedIn']) && $_SESSION['isloggedIn']){
+        echo "Hi, ".$_SESSION['name'];
+        echo '<a href="logout.php"> Logout </a>';
+    } else {
+        die("Please login again");
+    }
+    ?>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
         <div class="row">
             <div class="col-6 offset-3">
@@ -31,8 +54,8 @@
                 <div class="row my-2">
                     <div class="col-6">
                         <label for="subject">Subject</label>
-                    <input type="text" name="Subject_names" id="subject"
-                       value="<?php echo isset($_POST['Subject_names'])? $_POST['Subject_names']:""?>"
+                    <input type="text" name="Subject_name" id="subject"
+                       value="<?php echo isset($_POST['Subject_name'])? $_POST['Subject_name']:""?>"
                     class="form-control">
                     </div>
                     <div class="col-6">
@@ -60,7 +83,7 @@
     if(empty($_POST['first_name'])){
         echo "Please submit your details";
     } else {
-        printf("my name  is %s %s %s", $_POST['first_name'] ,$_POST['last_name'], $_POST['Subject_names'] );
+        printf("my name  is %s %s %s", $_POST['first_name'] ,$_POST['last_name'], $_POST['Subject_name'] );
     }
     
 ?>
@@ -68,12 +91,12 @@
 <?php
 require "config 2.php";
 print_r($_POST);    
-$sql="insert into test (first_name , last_name, Subject_names) values(:first_name, :last_name, :Subject_names)";
+$sql="insert into test (first_name , last_name, Subject_name) values(:first_name, :last_name, :Subject_name)";
 $stmt= $pdo->prepare($sql);
 $stmt->execute([
     "first_name"=>$_POST['first_name'],
     "last_name"=>$_POST['last_name'],
-    "Subject_names"=>$_POST['Subject_names']
+    "Subject_name"=>$_POST['Subject_name']
 ]);
 
 
