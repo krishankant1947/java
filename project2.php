@@ -102,7 +102,7 @@
                <div class="row my-2">
                   <div class="col-12">
                      <label class="fw-bold" for="Damicile">State of Damicile</label>
-                     <select name="stateofdomicile" id="Damicile" class="form-control mt-2">
+                     <select name="stateofdomicile" id="Damicile"  class="form-control mt-2">
                         <option value=""> -- select -- </option>
                         <option value="ANDAMAN &amp; NICOBAR ISLANDS">ANDAMAN &amp; NICOBAR ISLANDS</option>
                         <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
@@ -170,27 +170,25 @@
                      <input type="email" name="email" class="form-control mt-2 id="Emailid">
                   </div>
                </div>
-                  <div class="row my-4">
-                     <div class="col-4">
-                        <lable for="mbbs" class="fw-bold">Course Appling For</lable>
-                        <label for="mbbs" class="my-2 d-block fw-bold">MBBS
-                           <input type="radio" name="course2" id="mbbs" values="MBBS"></label>
-                        <label for="bds" class="my-2 d-block fw-bold" >BDS
-                           <input type="radio" name="course2" id="bds" values="BDS"></label>
-                        <label for="mbbs & BDS" class="my-2 d-block fw-bold">MBBS & BDS
-                           <input type="radio" name="course2" id="mbbs & bds" values="MBBS $ BDS"></label>
-                     
-                     </div>
-                     <div class="col-4"></div>
-                     <div class="col-4"></div>
+               <div class="row my-4">
+                  <div class="col-4">
+                     <lable for="mbbs" class="fw-bold">Course Appling For</lable>
+                     <label for="mbbs" class="my-2 d-block fw-bold">MBBS
+                     <input type="radio" name="course2" id="mbbs" values="MBBS"></label>
+                     <label for="bds" class="my-2 d-block fw-bold" >BDS
+                     <input type="radio" name="course2" id="bds" values="BDS"></label>
+                     <label for="mbbs & BDS" class="my-2 d-block fw-bold">MBBS & BDS
+                     <input type="radio" name="course2" id="mbbs & bds" values="MBBS $ BDS"></label>
                   </div>
-            
+                  <div class="col-4"></div>
+                  <div class="col-4"></div>
+               </div>
                <h5 style="text-decoration-line: underline;">
                Name of church/member body with whom the candidate is siging the service argreement with</h5 style="underline">
                <div class="row my-2">
                   <div class="col-12">
-                     <label class="fw-bold" for="mbbs_church"> MBBS</label>
-                     <select id="mbbs_church" name="mbbs_church" type="text" class="form-control mt-2">
+                     <label class="fw-bold" for="mbbschurch"> MBBS</label>
+                     <select id="mbbschurch" name="mbbs_church" type="text" class="form-control mt-2">
                         <option value=""> --- SELECT --- </option>
                         <option value="SYNODICAL BOARD OF HEALTH SERVICES CHURCH OF NORTH INDIA">SYNODICAL BOARD OF HEALTH SERVICES CHURCH OF NORTH INDIA</option>
                         <option value="CHURCH OF SOUTH INDIA ">CHURCH OF SOUTH INDIA </option>
@@ -224,8 +222,8 @@
                   </div>
                </div>
                <div class="row">
-                  <label class="fw-bold" for="bds_church">BDS</label>
-                  <select id="bds_church" name="bds_church" type="text" class="form-control mt-2">
+                  <label class="fw-bold" for="bdschurch">BDS</label>
+                  <select id="bdschurch" name="bds_church" type="text" class="form-control mt-2">
                      <option value=""> --- SELECT --- </option>
                      <option value="SYNODICAL BOARD OF HEALTH SERVICES CHURCH OF NORTH INDIA">SYNODICAL BOARD OF HEALTH SERVICES CHURCH OF NORTH INDIA</option>
                      <option value="CHURCH OF SOUTH INDIA ">CHURCH OF SOUTH INDIA </option>
@@ -263,7 +261,27 @@
                   </div>
                </div>
                <label>Bible test Center</label>
-            </div>  
+               <div class="row">
+                  <div class="col-6">
+                     <h5>1st Choice</h5>
+                     <small>Ludhiana</small>
+                  </div>
+                  <div class="col-6">
+                     <h5>2nd Choice</h5>
+                     <small>N/A</small>
+                  </div>
+               </div>
+               <div class="row">
+                  <table>
+                     <tr>
+                        <th>COURSE</th>
+                        <TH class="mx-5">"CATEGORY THE CANDIDATE IS APPLYING ON"
+                           <small> (Refer to the foot note & Confirm the appropriate category based on Domicile, as per eligibility)</small>
+                        </TH>
+                     </tr>
+                  </table>
+               </div>
+            </div>
             <!--card body-->
          </div>
          <!--card-->
@@ -285,8 +303,8 @@
 
 <?php
 require "config 2.php";
-$sql= "insert into studentdata(username,roll_no,neet_score,registration_id,father_name,mother_name,date,gender,church,email,stateofdomicile,Address,landline_number,alternative_number,mobile_number) 
-values(:username,:roll_no,:neet_score,:registration_id,:father_name,:mother_name,:date,:gender,:church,:email,:stateofdomicile,:Address,:landline_number,:alternative_number,:mobile_number)";
+$sql= "insert into studentdata(username,roll_no,neet_score,registration_id,father_name,mother_name,date,gender,church,email,stateofdomicile,Address,landline_number,alternative_number,mobile_number,mbbs_church,bds_church) 
+values(:username,:roll_no,:neet_score,:registration_id,:father_name,:mother_name,:date,:gender,:church,:email,:stateofdomicile,:Address,:landline_number,:alternative_number,:mobile_number,:mbbs_church,:bds_church)";
 $stmt=$pdo->prepare($sql);
 $stmt->execute([
    "username"=>$_POST[ 'username'],
@@ -304,5 +322,7 @@ $stmt->execute([
    "landline_number"=>$_POST['landline_number'],
    "alternative_number"=>$_POST['alternative_number'],
    "mobile_number"=>$_POST['mobile_number'],
+   "mbbs_church"=>$_POST['mbbs_church'],
+   "bds_church"=>$_POST['bds_church']
 ]);
 ?>
