@@ -16,3 +16,14 @@ CREATE TABLE `studentdata` (
 
 alter table studentdata add email varchar(100) not null;
 alter table studentdata add unique index(email);
+alter table studentdata add email varchar(100) not null;
+alter table studentdata add unique index(email);
+show create table studentdata ;
+alter table studentdata add stateofdomicile varchar(100) not null;
+alter table studentdata add Address varchar(100) default null;
+alter table studentdata add ladlinenumber varchar(100) not null;
+alter table studentdata add mobie_number varchar(100) not null;
+alter table studentdata add alternative_number varchar(100) not null;
+select * from studentdata;
+alter table studentdata change mobie_number mobile_number varchar(30) default null;
+alter table studentdata change landlinenumber landline_number varchar(30) default null;
