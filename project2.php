@@ -26,83 +26,83 @@
             <div class="card-body bg-dark-subtle">
                <div class="row">
                   <div class="col-12">
-                     <label for="nameid" class="bold">Name of applicant(Full name as Matriculation certificate)</label>
-                     <input type="text" class="form-control mt-2 " name="applicant_name" id="nameid" >
+                     <label class="fw-bold" for="nameid" >Name of applicant(Full name as Matriculation certificate)</label>
+                     <input type="text" class="form-control mt-2 " name="username" id="nameid" >
                   </div>
                </div>
                <h3>NEET DETAILS</h3>
                <div class="row">
                   <div class="col-4">
-                     <label for="roll_number">Roll Number</label>
-                     <input type="text" name="Number_roll" class="form-control mt-2" id="roll_number">
+                     <label class="fw-bold" for="roll_number">Roll Number</label>
+                     <input type="text" name="roll_no" class="form-control mt-2" id="roll_number">
                   </div>
                   <div class="col-4">
-                     <label for="Score">Neet Score</label>
+                     <label class="fw-bold" for="Score">Neet Score</label>
                      <input type="text" name="neet_score" class="form-control mt-2" id="Score">
                   </div>
                   <div class="col-4">
-                     <label for="AIR">All India Rank</label>
+                     <label class="fw-bold" for="AIR">All India Rank</label>
                      <input type="text" name="AIR1" class="form-control mt-2" id="AIR">
                   </div>
                </div>
                </br>
                <div class="row my-2">
                   <div class="col-12">
-                     <label for="bfuhs">BFUHS REGISTRATION ID</label>
-                     <input type="text" class="form-control mt-2" id="bfuhs" name="registration">
+                     <label class="fw-bold" for="bfuhs">BFUHS REGISTRATION ID</label>
+                     <input type="text" class="form-control mt-2" id="bfuhs" name="registration_id">
                   </div>
                </div>
                </br>
                <h3>PERSONAL DETAILS</h3>
                <div class="row">
                   <div class="col-4">
-                     <label for="fnameid">Father Name</label>
+                     <label class="fw-bold" for="fnameid">Father Name</label>
                      <input type="text" class="form-control mt-2" name="father_name" id="fnameid" >
                   </div>
                   <div class="col-4">
-                     <label for="Mnameid">Mother Name</label>
+                     <label class="fw-bold" for="Mnameid">Mother Name</label>
                      <input type="text" class="form-control mt-2" name="mother_name" id="Mnameid" >
                   </div>
                   <div class="col-4">
-                     <label for="DATEOFBIRTH">Date of birth</label>
-                     <input type="date" class="form-control mt-2" name="DOB" id="DATEOFBIRTH" >
+                     <label class="fw-bold" for="DATEOFBIRTH">Date of birth</label>
+                     <input type="date" class="form-control mt-2" name="date" id="DATEOFBIRTH" >
                   </div>
                </div>
                <div class="row my-2">
                   <div class="col-4">
-                     <label for="input_gender">Gender</label>
-                     <select id="input_gender" class="form-control mt-2">
+                     <label class="fw-bold" for="input_gender">Gender</label>
+                     <select id="input_gender" class="form-control mt-2" name="gender">
                         <option> Male</option>
                         <option> Female</option>
                         <option> Other</option>
                      </select>
                   </div>
                   <div class="col-8">
-                     <label for="religions">RELIGION</label>
+                     <label class="fw-bold" for="religions">RELIGION</label>
                      <input type="text" name="religion12" id="religions" value="CHRISTIAN" readonly="" class="form-control mt-2">
                   </div>
                </div>
                <div class="row my-2">
                   <div class="COL-12">
-                     <label for="mamber">Mamber of which church</label>
-                     <input type="text" name="mambership" id="mamber" class="form-control mt-2">
+                     <label class="fw-bold" for="mamber">Mamber of which church</label>
+                     <input type="text" name="church" id="mamber" class="form-control mt-2">
                   </div>
                </div>
                <div class="row my-2">
                   <div class="col-4">
-                     <label for="duration">Duration of Membership</label>
+                     <label class="fw-bold" for="duration">Duration of Membership</label>
                      <input type="text" name="Durationmamber" id="duration" class="form-control mt-2">
                   </div>
                   <div class="col-4">
-                     <label for="Baptism">Date of Baptism</label>
+                     <label class="fw-bold" for="Baptism">Date of Baptism</label>
                      <input type="date" name="dateofbaptism" id="Baptism" class="form-control mt-2">
                   </div>
                   <div class="col-4"></div>
                </div>
                <div class="row my-2">
                   <div class="col-12">
-                     <label for="Damicile">State of Damicile</label>
-                     <select name="stateofamicile" id="Damicile" class="form-control mt-2">
+                     <label class="fw-bold" for="Damicile">State of Damicile</label>
+                     <select name="stateofdomicile" id="Damicile" class="form-control mt-2">
                         <option value=""> -- select -- </option>
                         <option value="ANDAMAN &amp; NICOBAR ISLANDS">ANDAMAN &amp; NICOBAR ISLANDS</option>
                         <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
@@ -146,35 +146,50 @@
                </div>
                <div class="row my-2">
                   <div class="col-12">
-                     <label for="Correspondence_Address">Correspondence Address</label>
-                     <textarea name="Correspondenceaddress" id="Correspondence_Address" class="form-control mt-2"></textarea>
+                     <label class="fw-bold" for="Correspondence_Address">Correspondence Address</label>
+                     <textarea name="Address" id="Correspondence_Address" class="form-control mt-2"></textarea>
                   </div>
                </div>
                <div class="row my-2">
                   <div class="col-4">
-                     <label for="landlinenumber">Landline Number</label>
+                     <label class="fw-bold" for="landlinenumber">Landline Number</label>
                      <input type="text" name="landline_number" id="landlinenumber" class="form-control mt-2">
                   </div>
                   <div class="col-4">
-                     <label for="MobileNumber">Mobile</label>
-                     <input type="text" name="Mobile_Number" class="form-control mt-2 id="MobileNumber">
+                     <label class="fw-bold" for="MobileNumber">Mobile</label>
+                     <input type="text" name="mobile_number" class="form-control mt-2 id="MobileNumber">
                   </div>
                   <div class="col-4">
-                     <label for="Alternative">Alternative</label>
-                     <input type="text" name="Alternativ_number" class="form-control mt-2 id="Alternativ">
+                     <label class="fw-bold" for="Alternative">Alternative</label>
+                     <input type="text" name="alternative_number" class="form-control mt-2 id="Alternativ">
                   </div>
                </div>
                <div class="row my-2">
                   <div class="col-12">
-                     <label for="Emailid">Email Address (This will be the login id)</label>
-                     <input type="email" name="Emailaddress" class="form-control mt-2 id="Emailid">
+                     <label class="fw-bold" for="Emailid">Email Address (This will be the login id)</label>
+                     <input type="email" name="email" class="form-control mt-2 id="Emailid">
                   </div>
                </div>
+                  <div class="row my-4">
+                     <div class="col-4">
+                        <lable for="mbbs" class="fw-bold">Course Appling For</lable>
+                        <label for="mbbs" class="my-2 d-block fw-bold">MBBS
+                           <input type="radio" name="course2" id="mbbs" values="MBBS"></label>
+                        <label for="bds" class="my-2 d-block fw-bold" >BDS
+                           <input type="radio" name="course2" id="bds" values="BDS"></label>
+                        <label for="mbbs & BDS" class="my-2 d-block fw-bold">MBBS & BDS
+                           <input type="radio" name="course2" id="mbbs & bds" values="MBBS $ BDS"></label>
+                     
+                     </div>
+                     <div class="col-4"></div>
+                     <div class="col-4"></div>
+                  </div>
+            
                <h5 style="text-decoration-line: underline;">
                Name of church/member body with whom the candidate is siging the service argreement with</h5 style="underline">
                <div class="row my-2">
                   <div class="col-12">
-                     <label for="mbbs_church"> MBBS</label>
+                     <label class="fw-bold" for="mbbs_church"> MBBS</label>
                      <select id="mbbs_church" name="mbbs_church" type="text" class="form-control mt-2">
                         <option value=""> --- SELECT --- </option>
                         <option value="SYNODICAL BOARD OF HEALTH SERVICES CHURCH OF NORTH INDIA">SYNODICAL BOARD OF HEALTH SERVICES CHURCH OF NORTH INDIA</option>
@@ -209,7 +224,7 @@
                   </div>
                </div>
                <div class="row">
-                  <label for="bds_church">BDS</label>
+                  <label class="fw-bold" for="bds_church">BDS</label>
                   <select id="bds_church" name="bds_church" type="text" class="form-control mt-2">
                      <option value=""> --- SELECT --- </option>
                      <option value="SYNODICAL BOARD OF HEALTH SERVICES CHURCH OF NORTH INDIA">SYNODICAL BOARD OF HEALTH SERVICES CHURCH OF NORTH INDIA</option>
@@ -247,14 +262,47 @@
                      <button class="btn btn-outline-success" type="submit" >Next</button>
                   </div>
                </div>
-            </div>
+               <label>Bible test Center</label>
+            </div>  
             <!--card body-->
          </div>
          <!--card-->
       </form>
    </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 require "config 2.php";
-$sql= "create table studentdata( id int auto-increment,applicant_name ,)"
+$sql= "insert into studentdata(username,roll_no,neet_score,registration_id,father_name,mother_name,date,gender,church,email,stateofdomicile,Address,landline_number,alternative_number,mobile_number) 
+values(:username,:roll_no,:neet_score,:registration_id,:father_name,:mother_name,:date,:gender,:church,:email,:stateofdomicile,:Address,:landline_number,:alternative_number,:mobile_number)";
+$stmt=$pdo->prepare($sql);
+$stmt->execute([
+   "username"=>$_POST[ 'username'],
+   "roll_no"=>$_POST['roll_no'],
+   "neet_score"=>$_POST['neet_score'],
+   "registration_id"=>$_POST['registration_id'],
+   "father_name"=>$_POST[ 'father_name'],
+   "mother_name"=>$_POST[ 'mother_name'],
+   "date"=>$_POST[   'date'],
+   "gender"=>$_POST['gender'],
+   "church"=>$_POST['church'],
+   "email"=>$_POST['email'],
+   "stateofdomicile"=>$_POST[ 'stateofdomicile'],
+   "Address"=>$_POST[  'Address'],
+   "landline_number"=>$_POST['landline_number'],
+   "alternative_number"=>$_POST['alternative_number'],
+   "mobile_number"=>$_POST['mobile_number'],
+]);
 ?>
