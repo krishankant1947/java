@@ -43,7 +43,7 @@
             </div>
             <div class="col-6">
               <button type="submit" class="btn btn-primary">
-                Submit Application
+               <a href="project2.php"> Submit Application</a>
               </button>
             </div>
           </div>
