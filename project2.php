@@ -23,32 +23,32 @@
             </ul>
          </div>
          <div class="card mt-4 mx-5">
-            <div class="card-body bg-dark-subtle">
+            <div class="card-body text-bg-info">
                <div class="row">
                   <div class="col-12">
-                     <label class="fw-bold" for="nameid" >Name of applicant(Full name as Matriculation certificate)</label>
+                     <label class="fw-medium" for="nameid" >Name of applicant(Full name as Matriculation certificate)</label>
                      <input type="text" class="form-control mt-2 " name="username" id="nameid" >
                   </div>
                </div>
                <h3>NEET DETAILS</h3>
                <div class="row">
                   <div class="col-4">
-                     <label class="fw-bold" for="roll_number">Roll Number</label>
+                     <label class="fw-medium" for="roll_number">Roll Number</label>
                      <input type="text" name="roll_no" class="form-control mt-2" id="roll_number">
                   </div>
                   <div class="col-4">
-                     <label class="fw-bold" for="Score">Neet Score</label>
+                     <label class="fw-medium" for="Score">Neet Score</label>
                      <input type="text" name="neet_score" class="form-control mt-2" id="Score">
                   </div>
                   <div class="col-4">
-                     <label class="fw-bold" for="AIR">All India Rank</label>
+                     <label class="fw-medium" for="AIR">All India Rank</label>
                      <input type="text" name="AIR1" class="form-control mt-2" id="AIR">
                   </div>
                </div>
                </br>
                <div class="row my-2">
                   <div class="col-12">
-                     <label class="fw-bold" for="bfuhs">BFUHS REGISTRATION ID</label>
+                     <label class="fw-medium" for="bfuhs">BFUHS REGISTRATION ID</label>
                      <input type="text" class="form-control mt-2" id="bfuhs" name="registration_id">
                   </div>
                </div>
@@ -56,21 +56,21 @@
                <h3>PERSONAL DETAILS</h3>
                <div class="row">
                   <div class="col-4">
-                     <label class="fw-bold" for="fnameid">Father Name</label>
+                     <label class="fw-medium" for="fnameid">Father Name</label>
                      <input type="text" class="form-control mt-2" name="father_name" id="fnameid" >
                   </div>
                   <div class="col-4">
-                     <label class="fw-bold" for="Mnameid">Mother Name</label>
+                     <label class="fw-medium" for="Mnameid">Mother Name</label>
                      <input type="text" class="form-control mt-2" name="mother_name" id="Mnameid" >
                   </div>
                   <div class="col-4">
-                     <label class="fw-bold" for="DATEOFBIRTH">Date of birth</label>
+                     <label class="fw-medium" for="DATEOFBIRTH">Date of birth</label>
                      <input type="date" class="form-control mt-2" name="date" id="DATEOFBIRTH" >
                   </div>
                </div>
                <div class="row my-2">
                   <div class="col-4">
-                     <label class="fw-bold" for="input_gender">Gender</label>
+                     <label class="fw-medium" for="input_gender">Gender</label>
                      <select id="input_gender" class="form-control mt-2" name="gender">
                         <option> Male</option>
                         <option> Female</option>
@@ -78,30 +78,30 @@
                      </select>
                   </div>
                   <div class="col-8">
-                     <label class="fw-bold" for="religions">RELIGION</label>
+                     <label class="fw-medium" for="religions">RELIGION</label>
                      <input type="text" name="religion12" id="religions" value="CHRISTIAN" readonly="" class="form-control mt-2">
                   </div>
                </div>
                <div class="row my-2">
                   <div class="COL-12">
-                     <label class="fw-bold" for="mamber">Mamber of which church</label>
+                     <label class="fw-medium" for="mamber">Mamber of which church</label>
                      <input type="text" name="church" id="mamber" class="form-control mt-2">
                   </div>
                </div>
                <div class="row my-2">
                   <div class="col-4">
-                     <label class="fw-bold" for="duration">Duration of Membership</label>
+                     <label class="fw-medium" for="duration">Duration of Membership</label>
                      <input type="text" name="Durationmamber" id="duration" class="form-control mt-2">
                   </div>
                   <div class="col-4">
-                     <label class="fw-bold" for="Baptism">Date of Baptism</label>
+                     <label class="fw-medium" for="Baptism">Date of Baptism</label>
                      <input type="date" name="dateofbaptism" id="Baptism" class="form-control mt-2">
                   </div>
                   <div class="col-4"></div>
                </div>
                <div class="row my-2">
                   <div class="col-12">
-                     <label class="fw-bold" for="Damicile">State of Damicile</label>
+                     <label class="fw-medium" for="Damicile">State of Damicile</label>
                      <select name="stateofdomicile" id="Damicile"  class="form-control mt-2">
                         <option value=""> -- select -- </option>
                         <option value="ANDAMAN &amp; NICOBAR ISLANDS">ANDAMAN &amp; NICOBAR ISLANDS</option>
@@ -146,38 +146,38 @@
                </div>
                <div class="row my-2">
                   <div class="col-12">
-                     <label class="fw-bold" for="Correspondence_Address">Correspondence Address</label>
+                     <label class="fw-medium" for="Correspondence_Address">Correspondence Address</label>
                      <textarea name="Address" id="Correspondence_Address" class="form-control mt-2"></textarea>
                   </div>
                </div>
                <div class="row my-2">
                   <div class="col-4">
-                     <label class="fw-bold" for="landlinenumber">Landline Number</label>
+                     <label class="fw-medium" for="landlinenumber">Landline Number</label>
                      <input type="text" name="landline_number" id="landlinenumber" class="form-control mt-2">
                   </div>
                   <div class="col-4">
-                     <label class="fw-bold" for="MobileNumber">Mobile</label>
+                     <label class="fw-medium" for="MobileNumber">Mobile</label>
                      <input type="text" name="mobile_number" class="form-control mt-2 id="MobileNumber">
                   </div>
                   <div class="col-4">
-                     <label class="fw-bold" for="Alternative">Alternative</label>
+                     <label class="fw-medium" for="Alternative">Alternative</label>
                      <input type="text" name="alternative_number" class="form-control mt-2 id="Alternativ">
                   </div>
                </div>
                <div class="row my-2">
                   <div class="col-12">
-                     <label class="fw-bold" for="Emailid">Email Address (This will be the login id)</label>
+                     <label class="fw-medium" for="Emailid">Email Address (This will be the login id)</label>
                      <input type="email" name="email" class="form-control mt-2 id="Emailid">
                   </div>
                </div>
                <div class="row my-4">
                   <div class="col-4">
-                     <lable for="mbbs" class="fw-bold">Course Appling For</lable>
-                     <label for="mbbs" class="my-2 d-block fw-bold">MBBS
+                     <lable for="mbbs" class="fw-medium">Course Appling For</lable>
+                     <label for="mbbs" class="my-2 d-block fw-medium">MBBS
                      <input type="radio" name="course2" id="mbbs" values="MBBS"></label>
-                     <label for="bds" class="my-2 d-block fw-bold" >BDS
+                     <label for="bds" class="my-2 d-block fw-medium" >BDS
                      <input type="radio" name="course2" id="bds" values="BDS"></label>
-                     <label for="mbbs & BDS" class="my-2 d-block fw-bold">MBBS & BDS
+                     <label for="mbbs & BDS" class="my-2 d-block fw-medium">MBBS & BDS
                      <input type="radio" name="course2" id="mbbs & bds" values="MBBS $ BDS"></label>
                   </div>
                   <div class="col-4"></div>
@@ -187,7 +187,7 @@
                Name of church/member body with whom the candidate is siging the service argreement with</h5 style="underline">
                <div class="row my-2">
                   <div class="col-12">
-                     <label class="fw-bold" for="mbbschurch"> MBBS</label>
+                     <label class="fw-medium" for="mbbschurch"> MBBS</label>
                      <select id="mbbschurch" name="mbbs_church" type="text" class="form-control mt-2">
                         <option value=""> --- SELECT --- </option>
                         <option value="SYNODICAL BOARD OF HEALTH SERVICES CHURCH OF NORTH INDIA">SYNODICAL BOARD OF HEALTH SERVICES CHURCH OF NORTH INDIA</option>
@@ -222,7 +222,8 @@
                   </div>
                </div>
                <div class="row">
-                  <label class="fw-bold" for="bdschurch">BDS</label>
+                 <div class="col-12">
+                 <label class="fw-medium" for="bdschurch">BDS</label>
                   <select id="bdschurch" name="bds_church" type="text" class="form-control mt-2">
                      <option value=""> --- SELECT --- </option>
                      <option value="SYNODICAL BOARD OF HEALTH SERVICES CHURCH OF NORTH INDIA">SYNODICAL BOARD OF HEALTH SERVICES CHURCH OF NORTH INDIA</option>
@@ -254,6 +255,7 @@
                      <option value="WESTERN REGIONAL BOARD OF HEALTH SERVICES (CNI)">WESTERN REGIONAL BOARD OF HEALTH SERVICES (CNI)</option>
                      <option value="CHRISTIAN MEDICAL COLLEGE, LUDHIANA (ONLY FOR 2G)">CHRISTIAN MEDICAL COLLEGE, LUDHIANA (ONLY FOR 2G)</option>
                   </select>
+                 </div>
                </div>
                <div class="row my-3">
                   <div class="col-12">
@@ -271,16 +273,60 @@
                      <small>N/A</small>
                   </div>
                </div>
-               <div class="row">
-                  <table>
-                     <tr>
-                        <th>COURSE</th>
-                        <TH class="mx-5">"CATEGORY THE CANDIDATE IS APPLYING ON"
-                           <small> (Refer to the foot note & Confirm the appropriate category based on Domicile, as per eligibility)</small>
-                        </TH>
-                     </tr>
-                  </table>
+               <div class="row my-2">
+                  <div class="col-2 my-3">
+                    <h3>Course</h3>
+                  </div>
+                  <div class="col-1"></div>
+                  <div class="col-9 my-2">
+                     <label>CATEGORY THE CANDIDATE IS APPLYING ON (Refer to the foot note & Confirm the appropriate category based on Domicile, as per eligibility)</label>
+                  </div>
                </div>
+               <div class="row ">
+                  <div class="col-2">
+                     <label>MBBS</label>
+                  </div>
+                  <div class="col-1"></div>
+                  <div class="col-9">
+                  <label for="mbbs">2A
+                     <input type="radio" name="course2" class="mx-3" id="mbbs" values="MBBS"></label>
+                     <label for="bds" >2B
+                     <input type="radio" name="course2" class="mx-3" id="bds" values="BDS"></label>
+                     <label for="mbbs & BDS">2C
+                     <input type="radio" name="course2" class="mx-3" id="mbbs & bds" values="MBBS $ BDS"></label>
+                     <label for="mbbs">2D
+                     <input type="radio" name="course2" class="mx-3" id="mbbs" values="MBBS"></label>
+                     <label for="bds" >2E
+                     <input type="radio" name="course2" class="mx-3" id="bds" values="BDS"></label>
+                     <label for="mbbs & BDS">2F
+                     <input type="radio" name="course2" class="mx-3" id="mbbs & bds" values="MBBS $ BDS"></label>
+                     <label for="mbbs & BDS">2G
+                     <input type="radio" name="course2" class="mx-3" id="mbbs & bds" values="MBBS $ BDS"></label>
+                  </div>
+               </div>
+               <div class="row my-3 ">
+                  <div class="col-2">
+                     <label>BDS</label>
+                  </div>
+                  <div class="col-1"></div>
+                  <div class="col-9">
+                  <label for="mbbs">2A
+                     <input type="radio" name="course2" class="mx-3" id="mbbs" values="MBBS"></label>
+                     <label for="bds" >2B
+                     <input type="radio" name="course2" class="mx-3" id="bds" values="BDS"></label>
+                     <label for="mbbs & BDS">2C
+                     <input type="radio" name="course2" class="mx-3" id="mbbs & bds" values="MBBS $ BDS"></label>
+                     <label for="mbbs">2D
+                     <input type="radio" name="course2" class="mx-3" id="mbbs" values="MBBS"></label>
+                     <label for="bds" >2E
+                     <input type="radio" name="course2" class="mx-3" id="bds" values="BDS"></label>
+                     <label for="mbbs & BDS">2F
+                     <input type="radio" name="course2" class="mx-3" id="mbbs & bds" values="MBBS $ BDS"></label>
+                     <label for="mbbs & BDS">2G
+                     <input type="radio" name="course2" class="mx-3" id="mbbs & bds" values="MBBS $ BDS"></label>
+                  </div>
+               </div>
+                  
             </div>
             <!--card body-->
          </div>
