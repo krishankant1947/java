@@ -13,9 +13,9 @@ for($a=0; $a <count($fieldname); $a++){
    $array[]= ucwords ("enter your $fieldname[$a] ") ;
 }
 }
-var_dump(empty($array));
-// print_r($array);
-// if ()
+// var_dump(empty($array));
+ print_r($array);
+
 $sql= "insert into studentdata(username,roll_no,neet_score,registration_id,father_name,mother_name,date,gender,church,email,stateofdomicile,Address,landline_number,alternative_number,mobile_number,mbbs_church,bds_church) 
 values(:username,:roll_no,:neet_score,:registration_id,:father_name,:mother_name,:date,:gender,:church,:email,:stateofdomicile,:Address,:landline_number,:alternative_number,:mobile_number,:mbbs_church,:bds_church)";
 $stmt=$pdo->prepare($sql);
@@ -39,6 +39,7 @@ $stmt->execute([
    "bds_church"=>$_POST['bds_church']
 ]);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -386,3 +387,44 @@ $stmt->execute([
    </body>
 </html>
 
+<?php
+$array=array();
+require "config 2.php";
+$fieldname=[
+   'date','email','roll_no','username','neet_score','registration_id','father_name','mother_name','gender','church','stateofdomicile',
+   'landline_number','alternative_number','mobile_number','mbbs_church','bds_church'
+];
+
+for($a=0; $a <count($fieldname); $a++){
+  // printf("%s",$fieldname);
+//   echo $fieldname[$a];
+  if(empty($_POST[$fieldname[$a]])){     
+   $array[]= ucwords ("enter your $fieldname[$a] ") ;
+}
+}
+// var_dump(empty($array));
+ print_r($array);
+
+$sql= "insert into studentdata(username,roll_no,neet_score,registration_id,father_name,mother_name,date,gender,church,email,stateofdomicile,Address,landline_number,alternative_number,mobile_number,mbbs_church,bds_church) 
+values(:username,:roll_no,:neet_score,:registration_id,:father_name,:mother_name,:date,:gender,:church,:email,:stateofdomicile,:Address,:landline_number,:alternative_number,:mobile_number,:mbbs_church,:bds_church)";
+$stmt=$pdo->prepare($sql);
+$stmt->execute([
+   "username"=>$_POST['username'],
+   "roll_no"=>$_POST['roll_no'],
+   "neet_score"=>$_POST['neet_score'],
+   "registration_id"=>$_POST['registration_id'],
+   "father_name"=>$_POST['father_name'],
+   "mother_name"=>$_POST['mother_name'],
+   "date"=>$_POST['date'],
+   "gender"=>$_POST['gender'],
+   "church"=>$_POST['church'],
+   "email"=>$_POST['email'],
+   "stateofdomicile"=>$_POST[ 'stateofdomicile'],
+   "Address"=>$_POST['Address'],
+   "landline_number"=>$_POST['landline_number'],
+   "alternative_number"=>$_POST['alternative_number'],
+   "mobile_number"=>$_POST['mobile_number'],
+   "mbbs_church"=>$_POST['mbbs_church'],
+   "bds_church"=>$_POST['bds_church']
+]);
+?>
