@@ -1,46 +1,52 @@
 <?php
 $array=array();
 require "config 2.php";
-$fieldname=[
-   'date','email','roll_no','username','neet_score','registration_id','father_name','mother_name','gender','church','stateofdomicile',
-   'landline_number','alternative_number','mobile_number','mbbs_church','bds_church'
-];
 
-for($a=0; $a <count($fieldname); $a++){
-  // printf("%s",$fieldname);
-//   echo $fieldname[$a];
-  if(empty($_POST[$fieldname[$a]])){     
-   $array[]= ucwords ("enter your $fieldname[$a] ") ;
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+   $fieldname=[
+      'email','roll_no','username','neet_score','date','registration_id','father_name','mother_name','gender','church','stateofdomicile',
+      'landline_number','alternative_number','mobile_number','mbbs_church','bds_church'
+   ];
+   
+   for($a=0; $a <count($fieldname); $a++){
+      // printf("%s",$fieldname);
+      //   echo $fieldname[$a];
+      if(empty($_POST[$fieldname[$a]])){     
+      $array[]= ucwords ("enter your $fieldname[$a] ") ;
+      }
+   }
+   var_dump(empty($array));
+   //  print_r($array);
+   if(empty($array)){
+         $sql= "insert into studentdata(username,roll_no,neet_score,registration_id,father_name,mother_name,date,gender,church,email,stateofdomicile,Address,landline_number,alternative_number,mobile_number,mbbs_church,bds_church) 
+      values(:username,:roll_no,:neet_score,:registration_id,:father_name,:mother_name,:date,:gender,:church,:email,:stateofdomicile,:Address,:landline_number,:alternative_number,:mobile_number,:mbbs_church,:bds_church)";
+      $stmt=$pdo->prepare($sql);
+      $stmt->execute([
+         "username"=>$_POST['username'],
+         "roll_no"=>$_POST['roll_no'],
+         "neet_score"=>$_POST['neet_score'],
+         "registration_id"=>$_POST['registration_id'],
+         "father_name"=>$_POST['father_name'],
+         "mother_name"=>$_POST['mother_name'],
+         "date"=>$_POST['date'],
+         "gender"=>$_POST['gender'],
+         "church"=>$_POST['church'],
+         "email"=>$_POST['email'],
+         "stateofdomicile"=>$_POST[ 'stateofdomicile'],
+         "Address"=>$_POST['Address'],
+         "landline_number"=>$_POST['landline_number'],
+         "alternative_number"=>$_POST['alternative_number'],
+         "mobile_number"=>$_POST['mobile_number'],
+         "mbbs_church"=>$_POST['mbbs_church'],
+         "bds_church"=>$_POST['bds_church']
+      ]);
+   }
+   
 }
-}
-// var_dump(empty($array));
- print_r($array);
 
-$sql= "insert into studentdata(username,roll_no,neet_score,registration_id,father_name,mother_name,date,gender,church,email,stateofdomicile,Address,landline_number,alternative_number,mobile_number,mbbs_church,bds_church) 
-values(:username,:roll_no,:neet_score,:registration_id,:father_name,:mother_name,:date,:gender,:church,:email,:stateofdomicile,:Address,:landline_number,:alternative_number,:mobile_number,:mbbs_church,:bds_church)";
-$stmt=$pdo->prepare($sql);
-$stmt->execute([
-   "username"=>$_POST['username'],
-   "roll_no"=>$_POST['roll_no'],
-   "neet_score"=>$_POST['neet_score'],
-   "registration_id"=>$_POST['registration_id'],
-   "father_name"=>$_POST['father_name'],
-   "mother_name"=>$_POST['mother_name'],
-   "date"=>$_POST['date'],
-   "gender"=>$_POST['gender'],
-   "church"=>$_POST['church'],
-   "email"=>$_POST['email'],
-   "stateofdomicile"=>$_POST[ 'stateofdomicile'],
-   "Address"=>$_POST['Address'],
-   "landline_number"=>$_POST['landline_number'],
-   "alternative_number"=>$_POST['alternative_number'],
-   "mobile_number"=>$_POST['mobile_number'],
-   "mbbs_church"=>$_POST['mbbs_church'],
-   "bds_church"=>$_POST['bds_church']
-]);
+
+
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -49,9 +55,11 @@ $stmt->execute([
       <title>Document</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+         <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
    </head>
    <body class="bg-primary-subtle">
-      <form action="" method="post">
+      <form action="" method="post" novalidate>
          <div class="navbar" style="position: relative;">
             <ul class="navbar-nav nav-right">
                <li class="nav-item mx-5">
@@ -67,6 +75,15 @@ $stmt->execute([
          </div>
          <div class="card mt-4 mx-5">
             <div class="card-body bg-body-secondary">
+               <?php
+                   if(!empty($array)){
+                     echo '<div class="alert alert-danger">';
+                    for($a = 0; $a < count($array); $a++){
+                       echo $array[$a].'<br/>';
+                    }
+                    echo '</div>';
+                  }
+               ?>
                <div class="row">
                   <div class="col-12">
                      <label class="fw-medium" for="nameid" >Name of applicant(Full name as Matriculation certificate)</label>
@@ -349,19 +366,19 @@ $stmt->execute([
                   <div class="col-1"></div>
                   <div class="col-9">
                   <label for="mbbs">2A
-                     <input type="radio" name="course2" class="mx-3" required id="mbbs" values="MBBS"></label>
+                     <input type="radio" name="course3" class="mx-3" required id="mbbs" values="MBBS"></label>
                      <label for="bds" >2B
-                     <input type="radio" name="course2" class="mx-3" required id="bds" values="BDS"></label>
+                     <input type="radio" name="course3" class="mx-3" required id="bds" values="BDS"></label>
                      <label for="mbbs & BDS">2C
-                     <input type="radio" name="course2" class="mx-3" required id="mbbs & bds" values="MBBS $ BDS"></label>
+                     <input type="radio" name="course3" class="mx-3" required id="mbbs & bds" values="MBBS $ BDS"></label>
                      <label for="mbbs">2D
-                     <input type="radio" name="course2" class="mx-3" required id="mbbs" values="MBBS"></label>
+                     <input type="radio" name="course3" class="mx-3" required id="mbbs" values="MBBS"></label>
                      <label for="bds" >2E
-                     <input type="radio" name="course2" class="mx-3" required id="bds" values="BDS"></label>
+                     <input type="radio" name="course3" class="mx-3" required id="bds" values="BDS"></label>
                      <label for="mbbs & BDS">2F
-                     <input type="radio" name="course2" class="mx-3" required id="mbbs & bds" values="MBBS $ BDS"></label>
+                     <input type="radio" name="course3" class="mx-3" required id="mbbs & bds" values="MBBS $ BDS"></label>
                      <label for="mbbs & BDS">2G
-                     <input type="radio" name="course2" class="mx-3" required id="mbbs & bds" values="MBBS $ BDS"></label>
+                     <input type="radio" name="course3" class="mx-3" required id="mbbs & bds" values="MBBS $ BDS"></label>
                   </div>
                </div>
                <div>
@@ -376,7 +393,7 @@ $stmt->execute([
                </div>
                <div class="row my-3">
                   <div class="col-12">
-                     <button class="btn btn-outline-success" type="submit" >Next</button>
+                     <button class="btn btn-outline-success" type="submit" onclick="msgalert(event,this)" >Next</button>
                   </div>
                </div>
             </div>
@@ -384,47 +401,20 @@ $stmt->execute([
          </div>
          <!--card-->
       </form>
+      <script type="text/javascript">
+
+       function msgalert(event){
+         // event.preventDefault();
+
+            $('.card-body').prepend("<div class=\"alert alert-danger\" id=\"mesg\"></div>");
+            for(let i=0; i < document.querySelectorAll("input").length; i++)
+            {
+               if(document.querySelectorAll("input")[i].value == ''){
+                     $('#mesg').append("Missing data for "+document.querySelectorAll("input")[i].name+"<br/>")
+               }
+            }
+         }
+      </script>
    </body>
 </html>
 
-<?php
-$array=array();
-require "config 2.php";
-$fieldname=[
-   'date','email','roll_no','username','neet_score','registration_id','father_name','mother_name','gender','church','stateofdomicile',
-   'landline_number','alternative_number','mobile_number','mbbs_church','bds_church'
-];
-
-for($a=0; $a <count($fieldname); $a++){
-  // printf("%s",$fieldname);
-//   echo $fieldname[$a];
-  if(empty($_POST[$fieldname[$a]])){     
-   $array[]= ucwords ("enter your $fieldname[$a] ") ;
-}
-}
-// var_dump(empty($array));
- print_r($array);
-
-$sql= "insert into studentdata(username,roll_no,neet_score,registration_id,father_name,mother_name,date,gender,church,email,stateofdomicile,Address,landline_number,alternative_number,mobile_number,mbbs_church,bds_church) 
-values(:username,:roll_no,:neet_score,:registration_id,:father_name,:mother_name,:date,:gender,:church,:email,:stateofdomicile,:Address,:landline_number,:alternative_number,:mobile_number,:mbbs_church,:bds_church)";
-$stmt=$pdo->prepare($sql);
-$stmt->execute([
-   "username"=>$_POST['username'],
-   "roll_no"=>$_POST['roll_no'],
-   "neet_score"=>$_POST['neet_score'],
-   "registration_id"=>$_POST['registration_id'],
-   "father_name"=>$_POST['father_name'],
-   "mother_name"=>$_POST['mother_name'],
-   "date"=>$_POST['date'],
-   "gender"=>$_POST['gender'],
-   "church"=>$_POST['church'],
-   "email"=>$_POST['email'],
-   "stateofdomicile"=>$_POST[ 'stateofdomicile'],
-   "Address"=>$_POST['Address'],
-   "landline_number"=>$_POST['landline_number'],
-   "alternative_number"=>$_POST['alternative_number'],
-   "mobile_number"=>$_POST['mobile_number'],
-   "mbbs_church"=>$_POST['mbbs_church'],
-   "bds_church"=>$_POST['bds_church']
-]);
-?>
