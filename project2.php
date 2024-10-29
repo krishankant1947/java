@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
    
    for($a=0; $a <count($fieldname); $a++){
       // printf("%s",$fieldname);
-      //   echo $fieldname[$a];
+      //   echo $fieldname[$a];p
       if(empty($_POST[$fieldname[$a]])){     
       $array[]= ucwords ("enter your $fieldname[$a] ") ;
       }
@@ -59,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
           integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
    </head>
    <body class="bg-primary-subtle">
-      <form action="" method="post" novalidate>
+      <form action="" method="post" novalidate onsubmit="return submitCallback(event)">
          <div class="navbar" style="position: relative;">
             <ul class="navbar-nav nav-right">
                <li class="nav-item mx-5">
@@ -132,9 +132,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                   <div class="col-4">
                      <label class="fw-medium" for="input_gender">Gender</label>
                      <select required id="input_gender" class="form-control mt-2" name="gender">
-                        <option> Male</option>
-                        <option> Female</option>
-                        <option> Other</option>
+                        <option value=""> -- select -- </option>
+                        <option value="male"> Male</option>
+                        <option value="female"> Female</option>
+                        <option value="transgender"> Other (Transgender)</option>
                      </select>
                   </div>
                   <div class="col-8">
@@ -226,8 +227,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                </div>
                <div class="row my-2">
                   <div class="col-12">
-                     <label class="fw-medium" for="Emailid">Email Address (This will be the login id)</label>
-                     <input type="email" name="email" class="form-control mt-2 required id="Emailid">
+                     <label class="fw-medium" for="email">Email Address (This will be the login id)</label>
+                     <input type="email" name="email" class="form-control mt-2" required id="email">
                   </div>
                </div>
                <div class="row my-4">
@@ -393,7 +394,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                </div>
                <div class="row my-3">
                   <div class="col-12">
-                     <button class="btn btn-outline-success" type="submit" onclick="msgalert(event,this)" >Next</button>
+                     <button class="btn btn-outline-success" type="submit" >Next</button>
                   </div>
                </div>
             </div>
@@ -403,9 +404,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       </form>
       <script type="text/javascript">
 
-       function msgalert(event){
-         // event.preventDefault();
+         const submitCallback = function(event){
 
+            // removing message div so that it shouldn't duplicated or unnecessorliy display
+            $('#mesg').remove();
+
+            // fetching empty inputs
+            let emptyFields = $("input").filter(function(){
+               return this.value == ''
+            });
+
+            // chcking if we have empy fields or not if not found empty field then return and form submit
+            if( emptyFields.length == 0 ) {
+               return true
+            }
+
+            // else showing message and stop form submittion
             $('.card-body').prepend("<div class=\"alert alert-danger\" id=\"mesg\"></div>");
             for(let i=0; i < document.querySelectorAll("input").length; i++)
             {
@@ -413,6 +427,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                      $('#mesg').append("Missing data for "+document.querySelectorAll("input")[i].name+"<br/>")
                }
             }
+            event.preventDefault();
+            return false;       
          }
       </script>
    </body>
