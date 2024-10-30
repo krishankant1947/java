@@ -1,5 +1,5 @@
 <?php
-$array=array();
+$errors=array();
 require "config 2.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -12,17 +12,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       // printf("%s",$fieldname);
       //   echo $fieldname[$a];p
       if(empty($_POST[$fieldname[$a]])){     
-      $array[]= ucwords ("enter your $fieldname[$a] ") ;
+         $errors[]= ucwords ("enter your $fieldname[$a] ") ;
       }
    }
-   var_dump(empty($array));
-   //  print_r($array);
-   if(empty($array)){
+   var_dump(empty($errors));
+   //  print_r($errors);
+   if(empty($errors)){
          $sql= "insert into studentdata(username,roll_no,neet_score,registration_id,father_name,mother_name,date,gender,church,email,stateofdomicile,Address,landline_number,alternative_number,mobile_number,mbbs_church,bds_church) 
       values(:username,:roll_no,:neet_score,:registration_id,:father_name,:mother_name,:date,:gender,:church,:email,:stateofdomicile,:Address,:landline_number,:alternative_number,:mobile_number,:mbbs_church,:bds_church)";
       $stmt=$pdo->prepare($sql);
       $stmt->execute([
-         "username"=>$_POST['username'],
+         "username"=>$_POST[$fieldname[$a]],
          "roll_no"=>$_POST['roll_no'],
          "neet_score"=>$_POST['neet_score'],
          "registration_id"=>$_POST['registration_id'],
@@ -76,10 +76,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
          <div class="card mt-4 mx-5">
             <div class="card-body bg-body-secondary">
                <?php
-                   if(!empty($array)){
+                   if(!empty($errors)){
                      echo '<div class="alert alert-danger">';
-                    for($a = 0; $a < count($array); $a++){
-                       echo $array[$a].'<br/>';
+                    for($a = 0; $a < count($errors); $a++){
+                       echo $errors[$a].'<br/>';
                     }
                     echo '</div>';
                   }
