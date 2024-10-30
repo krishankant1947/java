@@ -6,13 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <form action="" method="post">
         <div class="row">
             <div class="col-12">
                 <label for="state_of_domicle">State</label>
-                <input type="text" name="select" id="state_of_domicle"  >
+                <input type="text" name="name" id="state_of_domicle"  >
             </div>
         </div>
+        
+                     <button  type="submit" >Next</button>
+                 
     </form>
+    <?php
+    $array=array();
+    require "config 2.php";
+    $sql="insert into dist(name)value(:name)";
+    $stmt=$pdo->prepare($sql);
+    $stmt->execute([
+        "name"=>$_POST['name']
+    ]);
+    ?>
 </body>
 </html>

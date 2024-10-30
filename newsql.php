@@ -27,3 +27,10 @@ alter table studentdata add alternative_number varchar(100) not null;
 select * from studentdata;
 alter table studentdata change mobie_number mobile_number varchar(30) default null;
 alter table studentdata change landlinenumber landline_number varchar(30) default null;
+
+
+
+create database state;
+use state;
+create table dist(id int auto_increment ,`name` varchar(60)default null,created_at datetime,primary key(id));
+select * from dist;
