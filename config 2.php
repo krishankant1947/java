@@ -1,7 +1,7 @@
 <?php
 define("host","localhost");
 define("username","root");
-define("password","root");
+define("password","Root");
 define("dbname","state");
 
 $dsn = sprintf("mysql:hostname=%s;dbname=%s", host, dbname);

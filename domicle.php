@@ -25,8 +25,10 @@
 
             if(empty(id))
                 $sql="insert into dist(name)value(?)";
-            else
-                update
+            else{
+              $sql="update dist set name='Krishan kant';
+            }
+                
             $stmt=$pdo->prepare($sql);
             $stmt->execute([$_POST['title']]);
             echo'data inserted';
