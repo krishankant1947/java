@@ -1,36 +1,53 @@
 <?php
+var_dump($_POST);
  require "config 2.php";
     $array=array();
     $edit_data = [];
 
-    if(!empty($_GET['action']) && $_GET['action']){
+    if(!empty($_GET['action'])){
         
-        echo 'heloo';
-        $id=$_GET['id'];
-        $sql="select * from dist where id=?";
-        $stmt=$pdo->prepare($sql);
-        $stmt->execute([$id]);
-        $edit_data= $stmt->fetch(PDO::FETCH_ASSOC);
+        if($_GET['action'] == 'edit'){
+            echo 'heloo';
+            $id=$_GET['id'];
+            $sql="select * from dist where id=?";
+            $stmt=$pdo->prepare($sql);
+            $stmt->execute([$id]);
+            $edit_data= $stmt->fetch(PDO::FETCH_ASSOC);
+        } else {
+            $sql="delete from dist where id=?";
+            $stmt=$pdo->prepare($sql);
+            $stmt->execute([$_GET['id']]);
+            header("location:domicle.php");
+            exit;
+        }
     }
 // var_dump($_SERVER['REQUEST_METHOD'],'post');
     if($_SERVER['REQUEST_METHOD']=='POST'){
-        echo '<pre>';
-        print_r($_POST);
-        print_r($_GET);
-        die;
         if(empty($_POST['title'])){
             $array[]=("enter your data");
         }
         if(empty($array)){
-
-            if(empty(id))
-                $sql="insert into dist(name)value(?)";
-            else{
-              $sql="update dist set name='Krishan kant';
+            if(empty($_GET['id']) === false){ 
+                $sql="update dist set name= ? where id=?";
             }
-                
+            else{
+                $sql="insert into dist(name,id) value(?,?)";
+            }
+
+            // if(empty($_GET['id'])){
+            //     $_GET['id'] = 'null';
+            // }
             $stmt=$pdo->prepare($sql);
-            $stmt->execute([$_POST['title']]);
+            $stmt->execute(
+                [
+                    $_POST['title'],
+                    empty($_GET['id'])
+                    ?'null'
+                    :$_GET['id']
+                ]
+            );
+            header("location:domicle.php");
+            exit;
             echo'data inserted';
        };
        
@@ -64,6 +81,7 @@
        echo '</div>'; 
     }
         ?>
+        <a href="?"><input type="button" value="Clear"/></a>
         <div class="row my-2">
             <div class="col-2 my-1">
                 <label for="state_of_domicle">State</label>
@@ -80,7 +98,7 @@
     </form><table border="1" width="100%" class="table table-striped table-hover">
     <?php
    
-    $sql="select * from dist";
+    $sql="select * from dist ORDER BY `id` DESC";
     $stmt=$pdo->prepare($sql);
     
     $stmt->execute();
@@ -118,8 +136,10 @@
         alert("Check");
      }
      function delele(event,object){
-        let id = object.getAttribute('data-id')
-        window.location.replace('domicle.php?action=delete&id='+id)
+        if(confirm("Are you sure want to delete?")){
+            let id = object.getAttribute('data-id')
+            window.location.replace('domicle.php?action=delete&id='+id)
+        }
      }
     </script>
     
