@@ -56,20 +56,10 @@ var_dump($_POST);
     
     //  var_dump($array);
     // print_r($array);
+    require "templates/header.php";
+
     ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
-     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-</head>
-<body>
+
     <form action="" method="post">
        
        <div class="row ">
@@ -95,27 +85,7 @@ var_dump($_POST);
             </div>   
            </div>  
                     
-    </form><table border="1" width="100%" class="table table-striped table-hover">
-    <?php
-   
-    $sql="select * from dist ORDER BY `id` DESC";
-    $stmt=$pdo->prepare($sql);
-    
-    $stmt->execute();
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // var_dump($row);
-    foreach($rows as $row){
-        echo <<<POO
-        
-        <tr>
-            <td>{$row['name']}</td>
-            <td><a href="?action=edit&id={$row['id']}"><i class="fa-solid fa-pen-to-square"></i></a> 
-            <a href="javascript://"  onclick="delele(event,this)" data-id="{$row['id']}"><i class="fa-solid fa-trash-can"></i></a></td>
-        </tr>
-        
-        POO;
-    }
-    ?></table>
+    </form>
         </div>
        </div>
     <script type="text/javascript">

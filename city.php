@@ -1,3 +1,17 @@
+<?php
+require "config 2.php";
+$array=array();
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if(empty($_POST['index'])){
+        echo "input are empty";
+    }
+$sql="insert into city (name) value(?)";
+$stmt=$pdo->prepare($sql);
+$stmt->execute([$_POST['index']]);
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +25,11 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <form action="">
+    <form action="" method="post">
+       
         <div class="row">
-            <div class="col-4 offset-4">
-                <div class="row">
-                <div class="col-2">
+            <div class="col-4 offset-4">                <div class="row">
+            <div class="col-2">
                 <label for="city">City</label>
             </div>
             <div class="col-7">
