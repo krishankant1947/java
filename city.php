@@ -1,17 +1,31 @@
 <?php
-require "config 2.php";
+require "config 2.php";?>
+<?php
 $array=array();
+$edit_data=[];
+if(empty($_GET['action'])){
+  
+
+
+}
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(empty($_POST['index'])){
         echo "input are empty";
     }
-$sql="insert into city (name) value(?)";
-$stmt=$pdo->prepare($sql);
-$stmt->execute([$_POST['index']]);
+   else{
+    $sql="insert into city (name) value(?)";
+    $stmt=$pdo->prepare($sql);
+    $stmt->execute([$_POST['index']]);
+   } 
+   
 
 }
 
+
+
+    //  var_dump($_POST);   
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +42,9 @@ $stmt->execute([$_POST['index']]);
     <form action="" method="post">
        
         <div class="row">
-            <div class="col-4 offset-4">                <div class="row">
+            <div class="col-4 offset-4">  
+                          
+            <div class="row">
             <div class="col-2">
                 <label for="city">City</label>
             </div>
@@ -36,11 +52,45 @@ $stmt->execute([$_POST['index']]);
                   <input type="text" name="index" class="form-control" id="city">
             </div>
             <div class="col-3">
-                <button class="btn btn-primary" type="submit">submit</button>
+                <button class="btn btn-primary" type="submit"  onclick="eventbinding(event, this)">submit</button>
             </div>
                 </div>
+                <table border="1px"  width=100% class="table table-striped table-hover">
+<?php
+   
+    $sql="select * from city";
+    $stmt=$pdo->prepare($sql);
+    $stmt->execute();
+    $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach($rows as $row){
+        echo<<<CT
+        <tr>
+        <td>{$row['name']}</td>
+        <td><a href=""><i class='fa-sharp-duotone fa-solid fa-pen-to-square'></i></a>
+        <a href=""><i class="fa-solid fa-trash-arrow-up"></i>                   </a></td>
+        </tr>
+
+    CT;
+    }
+    
+    //  echo "<pre>";
+    // var_dump($rows);
+    // echo "</pre>";
+?>
+</table>
             </div>
         </div>
     </form>
+    <script type="text/javascript">
+        function eventbinding(){
+            $('#INDEX').remove();
+            entry=$('#city').val();
+            if(entry.length ==0){
+            $('form').prepend("<div class=\"alert alert-danger\" id=\"INDEX\">migging </div>"); 
+             event.preventDefault();
+        }
+    }
+    </script>
+    
 </body>
 </html>
