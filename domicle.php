@@ -1,5 +1,5 @@
 <?php
-var_dump($_POST);
+var_dump( $edit_data );
  require "config 2.php";
     $array=array();
     $edit_data = [];
@@ -13,11 +13,12 @@ var_dump($_POST);
             $stmt=$pdo->prepare($sql);
             $stmt->execute([$id]);
             $edit_data= $stmt->fetch(PDO::FETCH_ASSOC);
+
         } else {
             $sql="delete from dist where id=?";
             $stmt=$pdo->prepare($sql);
             $stmt->execute([$_GET['id']]);
-            header("location:domicle.php");
+            header("location:domiclelisting.php");
             exit;
         }
     }
@@ -46,7 +47,7 @@ var_dump($_POST);
                     :$_GET['id']
                 ]
             );
-            header("location:domicle.php");
+            header("location:domiclelisting.php");
             exit;
             echo'data inserted';
        };
@@ -108,7 +109,7 @@ var_dump($_POST);
      function delele(event,object){
         if(confirm("Are you sure want to delete?")){
             let id = object.getAttribute('data-id')
-            window.location.replace('domicle.php?action=delete&id='+id)
+            window.location.replace('domiclelisting.php?action=delete&id='+id)
         }
      }
     </script>

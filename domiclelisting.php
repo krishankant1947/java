@@ -22,4 +22,27 @@ require "templates/header.php";
         
         POO;
     }
-    ?></table>
+    ?></table>   <script type="text/javascript">
+    
+    function submitbutton(event,object){
+     $('#DOMICLE').remove(); 
+     
+       mag=$('#state_of_domicle').val();
+         if(mag.length ==0){
+           $('form').prepend("<div class=\"alert alert-danger\" id=\"DOMICLE\">migging </div>"); 
+            event.preventDefault();
+           // alert("migging");
+         }
+          
+         
+    }
+    function edit(event,object){
+       alert("Check");
+    }
+    function delele(event,object){
+       if(confirm("Are you sure want to delete?")){
+           let id = object.getAttribute('data-id')
+           window.location.replace('domicle.php?action=delete&id='+id)
+       }
+    }
+   </script>

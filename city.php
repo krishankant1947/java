@@ -3,8 +3,23 @@ require "config 2.php";?>
 <?php
 $array=array();
 $edit_data=[];
-if(empty($_GET['action'])){
-  
+if(!empty($_GET['action'])){
+    if($_GET['action']=='edit'){
+        echo 'edksm';
+        $id=$_GET['id'];
+        $sql="select * from city where id=?";
+        $stmt=$pdo->prepare($sql);
+        $stmt->execute([$id]);
+        $edit_data=$stmt->fetch(PDO::FETCH_ASSOC);
+        // var_dump($edit_data);
+    }
+    else {
+        $sql="delete from city where id=?";
+        $stmt=$pdo->prepare($sql);
+        $stmt->execute([$_GET['id']]);
+        header("location:city.php");
+        exit;
+    }
 
 
 }
@@ -12,14 +27,32 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(empty($_POST['index'])){
         echo "input are empty";
     }
-   else{
-    $sql="insert into city (name) value(?)";
-    $stmt=$pdo->prepare($sql);
-    $stmt->execute([$_POST['index']]);
+    if(empty($array)){
+        if(empty($_GET['id'])==false){
+            $sql="update city set name= ? where id=?";
+        }
+        else{
+            $sql="insert into city (id,name) value(?,?)";
+        }
+            $stmt=$pdo->prepare($sql);
+            $stmt->execute(
+                [
+                    $_POST['index'],
+                    empty($_GET['id']) ?'null'
+                    :($_GET['id'])
+                    
+                    ]
+
+            );
+            header("location:city.php");
+            exit;
+    }
+   
+    
    } 
    
 
-}
+
 
 
 
@@ -49,7 +82,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <label for="city">City</label>
             </div>
             <div class="col-7">
-                  <input type="text" name="index" class="form-control" id="city">
+                  <input type="text" name="index" value="<?php echo empty($edit_data)?"":$edit_data['name']?>" class="form-control" id="city">
             </div>
             <div class="col-3">
                 <button class="btn btn-primary" type="submit"  onclick="eventbinding(event, this)">submit</button>
@@ -66,8 +99,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo<<<CT
         <tr>
         <td>{$row['name']}</td>
-        <td><a href=""><i class='fa-sharp-duotone fa-solid fa-pen-to-square'></i></a>
-        <a href=""><i class="fa-solid fa-trash-arrow-up"></i>                   </a></td>
+        <td><a href="city.php?action=edit&id={$row['id']}"><i class='fa-sharp-duotone fa-solid fa-pen-to-square'></i></a>
+        <a href=""><i class="fa-solid fa-trash-arrow-up"></i></a></td>
         </tr>
 
     CT;
