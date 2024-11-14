@@ -1,3 +1,6 @@
+<?php
+require "project.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
