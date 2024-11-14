@@ -16,7 +16,7 @@ require "project.php";
             <div class="card-body">
                 <div class="row">
                     <div class="col-4">
-                        <label for="profile_pic">Matriculation (10th Class Certificate) <span>*</span></label>
+                        <label for="profile_pic">Matriculation (10th Class Certificate) <span  class="text-amber-700 text-lg">*</span></label>
                         <input type="file" name="dp" id="profile_pic"/>
                     </div>
                     <div class="col-4">

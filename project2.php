@@ -1,6 +1,6 @@
 <?php
 $errors=array();
-require "config 2.php";
+require "projectconfig.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
    $fieldname=[
@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       values(:username,:roll_no,:neet_score,:registration_id,:father_name,:mother_name,:date,:gender,:church,:email,:stateofdomicile,:Address,:landline_number,:alternative_number,:mobile_number,:mbbs_church,:bds_church)";
       $stmt=$pdo->prepare($sql);
       $stmt->execute([
-         "username"=>$_POST[$fieldname[$a]],
+         "username"=>$_POST['username'],
          "roll_no"=>$_POST['roll_no'],
          "neet_score"=>$_POST['neet_score'],
          "registration_id"=>$_POST['registration_id'],
@@ -40,8 +40,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
          "mbbs_church"=>$_POST['mbbs_church'],
          "bds_church"=>$_POST['bds_church']
       ]);
+
+$sql="select * from studentdata where id=? ";
+$stmt=$pdo->prepare($sql);
+$stmt->execute([$_POST['email']]);
+$rows=$stmt->fetch(PDO::FETCH_ASSOC);
+   // login
+
+   // data = fetch by email 
+      // $_SESSION['isLogin'] = true;
+      // $_SESSION['data'] = $data;
+      // header("location: application.php")
+
+   var_dump($rows);
    }
-   
 }
 
 
@@ -55,8 +67,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       <title>Document</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-         <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+         <script src="https://code.jquery.com/jquery-3.7.1.min.js"   
           integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+           integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
    </head>
    <body class="bg-primary-subtle">
       <form action="" method="post" novalidate onsubmit="return submitCallback(event)">
@@ -84,6 +98,37 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     echo '</div>';
                   }
                ?>
+               <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Disabled</button>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">.okokoko..</div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">..lllllllllllll.</div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
+  <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+</div>
+               <ul class="nav nav-pills nav-justified">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Personal Details</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Academic Details</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Docum</a>
+  </li>
+</ul>
                <div class="row">
                   <div class="col-12">
                      <label class="fw-medium" for="nameid" >Name of applicant(Full name as Matriculation certificate)</label>
