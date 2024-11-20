@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
    var_dump(empty($errors));
    //  print_r($errors);
    if(empty($errors)){
-         $sql= "insert into studentdata(username,roll_no,neet_score,registration_id,father_name,mother_name,date,gender,church,email,stateofdomicile,Address,landline_number,alternative_number,mobile_number,mbbs_church,bds_church) 
+         $sql= "insert ignore into studentdata(username,roll_no,neet_score,registration_id,father_name,mother_name,date,gender,church,email,stateofdomicile,Address,landline_number,alternative_number,mobile_number,mbbs_church,bds_church) 
       values(:username,:roll_no,:neet_score,:registration_id,:father_name,:mother_name,:date,:gender,:church,:email,:stateofdomicile,:Address,:landline_number,:alternative_number,:mobile_number,:mbbs_church,:bds_church)";
       $stmt=$pdo->prepare($sql);
       $stmt->execute([
@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
          "bds_church"=>$_POST['bds_church']
       ]);
 
-$sql="select * from studentdata where id=? ";
+$sql="select * from studentdata where email= ?";
 $stmt=$pdo->prepare($sql);
 $stmt->execute([$_POST['email']]);
 $rows=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -363,7 +363,7 @@ $rows=$stmt->fetch(PDO::FETCH_ASSOC);
                   </select>
                  </div>
                </div>
-               <label>Bible test Center</label>
+               <p><u>Bible test Center</u></p>
                <div class="row">
                   <div class="col-6">
                      <h5>1st Choice</h5>

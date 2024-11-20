@@ -34,7 +34,7 @@
                 
                 <div class="row my-2">
                     <div class="col-12 d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-outline-success ">Submit</button>
+                        <button class="btn btn-outline-success ">login</button>
                     </div>
                 </div>
                 <div>

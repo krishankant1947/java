@@ -3,11 +3,11 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 session_start();
-// session_regenerate_id();
+session_regenerate_id();
 // session_destroy();;
 echo '<pre>';
-// $_SESSION['isloggedIn'] = true;
-// $_SESSION['name'] = "Vipan";
+$_SESSION['isloggedIn'] = true;
+$_SESSION['name'] = "Vipan";
 setcookie("name", "Vian");
 
 print_r($_COOKIE);
@@ -89,15 +89,15 @@ echo '</pre>';
 ?>
 
 <?php
-require "config 2.php";
-print_r($_POST);    
-$sql="insert into test (first_name , last_name, Subject_name) values(:first_name, :last_name, :Subject_name)";
-$stmt= $pdo->prepare($sql);
-$stmt->execute([
-    "first_name"=>$_POST['first_name'],
-    "last_name"=>$_POST['last_name'],
-    "Subject_name"=>$_POST['Subject_name']
-]);
+// require "config 2.php";
+// print_r($_POST);    
+// $sql="insert into test (first_name , last_name, Subject_name) values(:first_name, :last_name, :Subject_name)";
+// $stmt= $pdo->prepare($sql);
+// $stmt->execute([
+//     "first_name"=>$_POST['first_name'],
+//     "last_name"=>$_POST['last_name'],
+//     "Subject_name"=>$_POST['Subject_name']
+// ]);
 
 
 
