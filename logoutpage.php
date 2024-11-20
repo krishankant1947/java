@@ -13,18 +13,30 @@
 </head>
 <body>
     <form action="">
-        <div class="container-fluid">
-            <div class="">
+        <div class="container border border-black bg-danger-subtle ">
+            <div class="container-fluid bg-dark-subtle">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4 text-center  ">
+                <img src="log.png" alt="" class="rounded-circle ">
+                </div>
+                <div class="col-4"></div>
+            </div>
               <div class="row ">
-                <div class="col-4 mt-20">
+                <div class="col-4 text-center">
                     <p>Application no</p>
                     <p>2025-111652</p>
                 </div>
-                <div class="col-4"></div>
-                <div class="col-4"></div>
-              </div>
-
+                <div class="col-4">
+                   
                 </div>
+                <div class="col-4 text-center">
+                    <Button class="" type="resetefcs">
+efcs
+                    </Button>
+                </div>
+              </div>
+            </div>
             </div>
         </div>
     </form>
