@@ -37,9 +37,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $stmt=$pdo->prepare($sql);
             $stmt->execute(
                 [
-                    $_POST['index'],
-                    empty($_GET['id']) ?'null'
-                    :($_GET['id'])
+                    $_POST['index']
+                    // empty($_GET['id']) ?'null'
+                    // :($_GET['id'])
                     
                     ]
 
