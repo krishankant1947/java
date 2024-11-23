@@ -100,6 +100,11 @@ require "project.php";
                <label for="" ></label>
             </div>
          </div>
+         <div class="row my-3">
+                  <div class="col-12 text-center">
+                     <button class="btn btn-outline-success " type="submit" >Save</button>
+                  </div>
+               </div>
          </div><!--card-body-->
          </div>
       </form>

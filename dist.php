@@ -8,7 +8,7 @@
             $array[]=("enter your data");
         }
         if(empty($array)){
-            $sql="insert into dist(name)value(?)";
+            $sql="insert into dist(name) value(?)";
             $stmt=$pdo->prepare($sql);
             $stmt->execute([$_POST['title']]);
             echo'data inserted';
@@ -52,21 +52,23 @@
             </div>   
            </div>             
     </form>
+    <table>
     <?php
     
     $sql="select * from dist";
     $data= $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-    $stmt=$pdo->prepend($sql);
-    $stmt->execute([$_POST['title']]);
-    $row=$stmt->fetchAll(PDO::FETCH_ASSOC);
-    for($a=0; $a<count($row); $a++){
+    $stmt=$pdo->prepare($sql);
+    $stmt->execute();
+   // $dist_rows
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    for($a=0; $a<count($rows); $a++){
         echo <<< PDO
         <tr>
-            <td>{$row[$a]['title']}</td>
+            <td>{$rows[$a]['name']}</td>
         </tr>
         PDO;
     }
-    ?>
+    ?></table>
         </div>
        </div>
     <script type="text/javascript">

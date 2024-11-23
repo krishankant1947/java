@@ -36,7 +36,12 @@
                   </div>
                 </div>
                 <div>
-                    <
+                    <h1 class="text-center">Suki Phelps</h1>
+                    <p class="text-center"> MBBS - CHRISTIAN MEDICAL COLLEGE, LUDHIANA (ONLY FOR 2G) - 2G</p>
+                    <p class="text-center">BDS - CHURCH OF SOUTH INDIA - 2A</p>
+                </div>
+                <div>
+                  <p class="mt-10 text-center">Magna velit illo lab</p>
                 </div>
             </div>
         </div>

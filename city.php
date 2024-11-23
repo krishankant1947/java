@@ -32,19 +32,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $sql="update city set name= ? where id=?";
         }
         else{
-            $sql="insert into city (id,name) value(?,?)";
-        }
+            $sql="insert into city (name) value(?)";
+       
             $stmt=$pdo->prepare($sql);
-            $stmt->execute(
-                [
-                    $_POST['index']
-                    // empty($_GET['id']) ?'null'
-                    // :($_GET['id'])
-                    
-                    ]
-
-            );
-            header("location:city.php");
+            $stmt->execute([$_POST['city_name']]);
+               }
+             header("location:city.php");
             exit;
     }
    
@@ -82,7 +75,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <label for="city">City</label>
             </div>
             <div class="col-7">
-                  <input type="text" name="index" value="<?php echo empty($edit_data)?"":$edit_data['name']?>" class="form-control" id="city">
+                  <input type="text" name="city_name" fo value="<?php echo empty($edit_data)?"":$edit_data['name']?>" class="form-control" id="city">
             </div>
             <div class="col-3">
                 <button class="btn btn-primary" type="submit"  onclick="eventbinding(event, this)">submit</button>
