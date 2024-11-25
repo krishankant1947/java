@@ -1,19 +1,25 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
-session_start();
-session_regenerate_id();
-// session_destroy();;
-echo '<pre>';
-$_SESSION['isloggedIn'] = true;
-$_SESSION['name'] = "Vipan";
-setcookie("name", "Vian");
+// session_start();
+// session_regenerate_id();
+// // session_destroy();;
+// echo '<pre>';
+// $_SESSION['isloggedIn'] = true;
+// $_SESSION['name'] = "Vipan";
+// setcookie("name", "Vian");
 
-print_r($_COOKIE);
-print_r($_SESSION);
-echo '</pre>';
-?>
+// print_r($_COOKIE);
+// print_r($_SESSION);
+// echo '</pre>';
+//  ?><?php //if(!empty($_SESSION['isloggedIn']) && $_SESSION['isloggedIn']){
+//         echo "Hi, ".$_SESSION['name'];
+//         echo '<a href="0logout.php"> Logout </a>';
+//     } else {
+//         die("Please login again");
+//     }
+//     ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,13 +30,7 @@ echo '</pre>';
      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body >
-    <?php if(!empty($_SESSION['isloggedIn']) && $_SESSION['isloggedIn']){
-        echo "Hi, ".$_SESSION['name'];
-        echo '<a href="logout.php"> Logout </a>';
-    } else {
-        die("Please login again");
-    }
-    ?>
+    
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
         <div class="row">
             <div class="col-6 offset-3">

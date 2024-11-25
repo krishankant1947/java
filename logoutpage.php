@@ -1,3 +1,15 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+session_start();
+session_regenerate_id();
+session_destroy();;
+echo '<pre>';
+$_SESSION['isloggedIn'] = true;
+echo '</pre>';
+// var_dump($_SESSION['isloggedIn']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +27,12 @@
     <form action="">
         <div class="container border border-black bg-danger-subtle ">
             <div class="container-fluid bg-dark-subtle">
+            <?php if(!empty($_SESSION['isloggedIn']) && $_SESSION['isloggedIn']){
+        echo '<a href="logout.php"> Logout </a>';
+    } else {
+        ("Please login again");
+    }
+    ?>
                 <div class="row">
                   <div class="col-4"></div>
                   <div class="col-4 text-center  ">
