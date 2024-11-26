@@ -27,12 +27,6 @@ echo '</pre>';
     <form action="">
         <div class="container border border-black bg-danger-subtle ">
             <div class="container-fluid bg-dark-subtle">
-            <?php if(!empty($_SESSION['isloggedIn']) && $_SESSION['isloggedIn']){
-        echo '<a href="logout.php"> Logout </a>';
-    } else {
-        ("Please login again");
-    }
-    ?>
                 <div class="row">
                   <div class="col-4"></div>
                   <div class="col-4 text-center  ">
@@ -42,24 +36,29 @@ echo '</pre>';
                 </div>
                 <div class="row ">
                   <div class="col-4 text-center">
-                     <p>Application no</p>
-                     <p>2025-111652</p>
+                     <p class="m-0">Application no</p>
+                     <p class="m-0">2025-111652</p>
                   </div>
                   <div class="col-4">
                   </div>
                   <div class="col-4 text-center">
                      <Button class="" type="resetefcs">
-                     efcs
+                     <?php if(!empty($_SESSION['isloggedIn']) && $_SESSION['isloggedIn']){
+                        echo '<a href="logout.php"> Logout </a>';
+                        } else {
+                            ("Please login again");
+                        }
+                    ?>
                      </Button>
                   </div>
                 </div>
                 <div>
                     <h1 class="text-center">Suki Phelps</h1>
-                    <p class="text-center"> MBBS - CHRISTIAN MEDICAL COLLEGE, LUDHIANA (ONLY FOR 2G) - 2G</p>
-                    <p class="text-center">BDS - CHURCH OF SOUTH INDIA - 2A</p>
+                    <p class="text-center m-0"> MBBS - CHRISTIAN MEDICAL COLLEGE, LUDHIANA (ONLY FOR 2G) - 2G</p>
+                    <p class="text-center ">BDS - CHURCH OF SOUTH INDIA - 2A</p>
                 </div>
                 <div>
-                  <p class="mt-10 text-center">Magna velit illo lab</p>
+                  <p class=" text-center">Magna velit illo lab</p>
                 </div>
             </div>
         </div>
