@@ -2,39 +2,47 @@
 
 $tires = [];
 
-
-class Car{
-    var $tires = ["back-left","back-right","front-right","front-left","middle-right","middle-left"];
-    var $rooftop = true;
-    var $engine = "";
-
-    private $state = "standing";
-    public $model = "BMW";
-
-    function startDriving(){
-        $this->state = "driving";
-        echo "Car now moving<br/>";        
-    }
-}
+require 'car.class.php';
 
 $mycars = [];
 
 $mycars[] = new Car();
+$mycars[0]->setModel("maruti");
 $mycars[0]->startDriving();
-$mycars[0]->model = "maruti";
 
 $mycars[] = new Car();
+$mycars[1]->setModel("Hyndai");
 $mycars[1]->startDriving();
-$mycars[1]->model = "Hyndai";
 
 $mycars[] = new Car();
+$mycars[2]->setModel("SUZUKI");
 $mycars[2]->startDriving();
-$mycars[2]->model = "SUZUKI";
 
 $mycars[] = new Car();
 $mycars[3]->startDriving();
 
+$mycars[] = new Bike();
+$mycars[4]->startDriving();
 
-echo $mycars[1]->model;
+$mycars[] = new Bike();
+$mycars[5]->startDriving();
+$mycars[] = new Bike();
+$mycars[6]->startDriving();
+$mycars[] = new Bike();
+$mycars[7]->startDriving();
+$mycars[] = new Bike();
+$mycars[8]->startDriving();
+$mycars[] = new Bike();
+$mycars[9]->startDriving();
+
+$mycars[] = new Bike("truck");
+$mycars[10]->startDriving();
+
+
+// echo $mycars[1]->model;
 // var_dump($mycars);
+
+
 echo "procesing.....";
+
+
