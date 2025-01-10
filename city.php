@@ -24,7 +24,7 @@ if(!empty($_GET['action'])){
 
 }
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if(empty($_POST['index'])){
+    if(empty($_POST['name'])){
         echo "input are empty";
     }
     if(empty($array)){
