@@ -32,5 +32,5 @@ alter table studentdata change landlinenumber landline_number varchar(30) defaul
 
 create database state;
 use state;
-create table dist(id int auto_increment ,`name` varchar(60)default null,created_at datetime,primary key(id));
+create table login(email ,`name` varchar(60)default null,created_at datetime,primary key(id));
 select * from dist;
