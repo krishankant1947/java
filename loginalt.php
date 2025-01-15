@@ -16,10 +16,11 @@
     <section>
         <form method="post" id="loginform" action="dashboard.html" novalidate >
             <div class="row">
-                <div class="col-4 offset-4">
+                <div class="col-4 offset-4 border">
                     <div class="row my-2">
                         <div class="col-12 text-center ">
-                            <img src="download (1).jfif" class="rounded-4 " >
+                           <h1>Welcome Back</h1>
+                           Enter your credentials to access your account
                         </div>
                     </div>
                     <div class="row my-2">
@@ -69,8 +70,8 @@
                     </div>
                    
                     <div class="row my-2 text-center">
-                        <div class="col-12">
-                            <button class="w-50 btn btn-lg shadow-lg  btn-primary" type="submit" className = 'was-validated'    >Login </button>
+                        <div class="col-12 d-grid gap-2 d-md-block">
+                            <button class=" btn btn-primary" type="submit" className = 'was-validated'    >Login </button>
             
                         </div>
                     </div>
@@ -81,16 +82,7 @@
     
     <script type="text/javascript">
         
-        (function($){
-            // alert($);
-        })(jQuery)
-
-
-        function bane(){
-            // asf asf
-        }
-
-        bane()
+       
 
         $(document).ready(function(){
             
